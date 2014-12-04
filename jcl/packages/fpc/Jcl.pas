@@ -11,19 +11,19 @@ uses
   JclCompression, JclCounter, JclDateTime, JclFileUtils, JclIniFiles, 
   JclLogic, JclMath, JclMIDI, JclMime, JclNotify, JclPCRE, JclResources, 
   JclRTTI, JclSchedule, JclSimpleXml, JclStatistics, JclStreams, 
-  JclStringConversions, JclStringLists, JclStrings, JclSynch, JclSysInfo, 
-  JclSysUtils, JclUnicode, JclUnitConv, JclUnitVersioning, 
-  JclUnitVersioningProviders, JclValidation, JclWideStrings, pcre, zlibh, 
-  Hardlinks, JclAppInst, JclCIL, JclCLR, JclCOM, JclConsole, JclCppException, 
-  JclDebug, JclDebugSerialization, JclDebugXMLDeserializer, 
-  JclDebugXMLSerializer, JclDotNet, JclHookExcept, JclLANMan, JclLocales, 
-  JclMetadata, JclMiscel, JclMsdosSys, JclMultimedia, JclNTFS, JclPeImage, 
-  JclRegistry, JclSecurity, JclShell, JclStructStorage, JclSvcCtrl, JclTask, 
-  JclTD32, JclTimeZones, JclWin32, JclWin32Ex, JclWinMIDI, mscoree_TLB, 
-  mscorlib_TLB, MSTask, sevenzip, Snmp, FpStringHash, JclExprEval, 
+  JclStringLists, JclStrings, JclSysInfo, JclSysUtils, JclUnicode, 
+  JclUnitConv, JclUnitVersioning, JclUnitVersioningProviders, JclValidation, 
+  JclWideStrings, pcre, zlibh, Hardlinks, JclAppInst, JclCIL, JclCLR, JclCOM, 
+  JclConsole, JclCppException, JclDebug, JclDebugSerialization, 
+  JclDebugXMLDeserializer, JclDebugXMLSerializer, JclDotNet, JclHookExcept, 
+  JclLANMan, JclLocales, JclMetadata, JclMiscel, JclMsdosSys, JclMultimedia, 
+  JclNTFS, JclPeImage, JclRegistry, JclSecurity, JclShell, JclStructStorage, 
+  JclSvcCtrl, JclTask, JclTD32, JclTimeZones, JclWin32, JclWin32Ex, 
+  JclWinMIDI, mscoree_TLB, mscorlib_TLB, MSTask, sevenzip, Snmp, JclExprEval, 
   JclAbstractContainers, JclAlgorithms, JclArrayLists, JclArraySets, 
   JclBinaryTrees, JclContainerIntf, JclHashMaps, JclHashSets, JclLinkedLists, 
-  JclQueues, JclSortedMaps, JclStacks, JclStrHashMap, JclTrees, JclVectors;
+  JclQueues, JclSortedMaps, JclStacks, JclStrHashMap, JclTrees, JclVectors, 
+  FpStringHash;
 
 implementation
 

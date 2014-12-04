@@ -73,7 +73,10 @@ uses
   Libc,
   {$ENDIF HAS_UNIT_LIBC}
   {$IFDEF FPC}
+  types,
   {$IFDEF UNIX}
+  BaseUnix,
+  dateutils,
   {$IFNDEF LINUX}
   Unix,
   {$ENDIF ~LINUX}
@@ -678,6 +681,7 @@ end;
 {$ENDIF MSWINDOWS}
 
 {$IFDEF UNIX}
+{$IFNDEF FPC}
 function DateTimeToLocalDateTime(DateTime: TDateTime): TDateTime;
 var
   {$IFDEF LINUX}
@@ -696,6 +700,12 @@ begin
   {$ENDIF ~LINUX}
   Result  := ((DateTime * SecsPerDay) - Offset) / SecsPerDay;
 end;
+{$ELSE FPC}
+function DateTimeToLocalDateTime(DateTime: TDateTime): TDateTime;
+begin
+  Result := UniversalTimeToLocal(DateTime);
+end;
+{$ENDIF FPC}
 {$ENDIF UNIX}
 
 {$IFDEF MSWINDOWS}
@@ -716,6 +726,7 @@ end;
 {$ENDIF MSWINDOWS}
 
 {$IFDEF UNIX}
+{$IFNDEF FPC}
 function LocalDateTimeToDateTime(DateTime: TDateTime): TDateTime;
 var
   {$IFDEF LINUX}
@@ -734,6 +745,12 @@ begin
   {$ENDIF ~LINUX}
   Result  := ((DateTime * SecsPerDay) + Offset) / SecsPerDay;
 end;
+{$ELSE FPC}
+function LocalDateTimeToDateTime(DateTime: TDateTime): TDateTime;
+begin
+  Result := LocalTimeToUniversal(DateTime);
+end;
+{$ENDIF FPC}
 {$ENDIF UNIX}
 
 function HoursToMSecs(Hours: Integer): Integer;

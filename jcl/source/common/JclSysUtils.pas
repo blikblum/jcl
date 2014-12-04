@@ -68,7 +68,7 @@ uses
   {$ENDIF MSWINDOWS}
   SysUtils, Classes, TypInfo, SyncObjs,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclSynch;
+  JclBase {$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE};
 
 // memory initialization
 // first parameter is "out" to make FPC happy with uninitialized values
@@ -498,6 +498,7 @@ type
 const
   ABORT_EXIT_CODE = {$IFDEF MSWINDOWS} ERROR_CANCELLED {$ELSE} 1223 {$ENDIF};
 
+{$IFNDEF FPC}
 function Execute(const CommandLine: string; OutputLineCallback: TTextHandler; RawOutput: Boolean = False;
   AbortPtr: PBoolean = nil; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
 function Execute(const CommandLine: string; AbortEvent: TJclEvent;
@@ -515,6 +516,7 @@ function Execute(const CommandLine: string; var Output, Error: string;
   RawOutput: Boolean = False; RawError: Boolean = False; AbortPtr: PBoolean = nil; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
 function Execute(const CommandLine: string; AbortEvent: TJclEvent;
   var Output, Error: string; RawOutput: Boolean = False; RawError: Boolean = False; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
+{$ENDIF FPC}
 
 type
 {$HPPEMIT 'namespace Jclsysutils'}
@@ -2671,6 +2673,7 @@ begin
   FSignChars[True] := Value;
 end;
 
+{$IFNDEF FPC}
 //=== Child processes ========================================================
 
 const
@@ -3215,6 +3218,8 @@ begin
   Error := '';
   Result := InternalExecute(CommandLine, nil, AbortEvent, Output, OutputLineCallback, RawOutput, False, Error, ErrorLineCallback, RawError, ProcessPriority);
 end;
+
+{$ENDIF FPC}
 
 //=== { TJclCommandLineTool } ================================================
 

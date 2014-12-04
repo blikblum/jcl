@@ -869,8 +869,8 @@ uses
   System.Math,
   {$ENDIF USE_MATH_UNIT}
   Jcl8087,
-  JclResources,
-  JclSynch;
+  JclResources
+  {$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE};
 
 // Note (rrossmair): Usage of the "assembler" directive seems to be an Free Pascal requirement
 // (it's obsolete in Delphi since v. 2 I believe).

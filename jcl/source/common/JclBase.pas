@@ -145,7 +145,6 @@ type
 
 // Redefinition of ULARGE_INTEGER to relieve dependency on Windows.pas
 type
-  {$IFNDEF FPC}
   PULARGE_INTEGER = ^ULARGE_INTEGER;
   {$EXTERNALSYM PULARGE_INTEGER}
   ULARGE_INTEGER = record
@@ -157,7 +156,7 @@ type
      (QuadPart: Int64);
   end;
   {$EXTERNALSYM ULARGE_INTEGER}
-  {$ENDIF ~FPC}
+
   TJclULargeInteger = ULARGE_INTEGER;
   PJclULargeInteger = PULARGE_INTEGER;
 
@@ -222,6 +221,10 @@ const
   {$ENDIF CPU64}
 
   HexFmt = HexPrefix + HexDigitFmt;
+
+  {$ifdef FPC}
+  ERROR_SUCCESS = 0;
+  {$endif}
 
 const
   BOM_UTF16_LSB: array [0..1] of Byte = ($FF,$FE);
@@ -355,7 +358,7 @@ function Addr32ToAddr64(const Value: TJclAddr32): TJclAddr64;
 
 {$IFDEF FPC}
 type
-  HWND = type Windows.HWND;
+  HWND = type System.THandle;
 {$ENDIF FPC}
 
  {$IFDEF SUPPORTS_GENERICS}

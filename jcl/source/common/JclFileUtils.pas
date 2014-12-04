@@ -262,8 +262,10 @@ procedure GetFileAttributeListEx(const Items: TStrings; const Attr: Integer);
 function GetFileInformation(const FileName: string; out FileInfo: TSearchRec): Boolean; overload;
 function GetFileInformation(const FileName: string): TSearchRec; overload;
 {$IFDEF UNIX}
+{$IFNDEF FPC}
 function GetFileStatus(const FileName: string; out StatBuf: TStatBuf64;
   const ResolveSymLinks: Boolean): Integer;
+{$ENDIF FPC}
 {$ENDIF UNIX}
 {$IFDEF MSWINDOWS}
 function GetFileLastWrite(const FileName: string): TFileTime; overload;
@@ -3707,6 +3709,7 @@ begin
 end;
 {$ENDIF ~MSWINDOWS}
 {$IFDEF UNIX}
+{$IFNDEF FPC}
 var
   Buf: TStatBuf64;
   ResultBuf: TGroup;
@@ -3721,6 +3724,7 @@ begin
     Result := ResultBuf.gr_name;
   end;
 end;
+{$ENDIF FPC}
 {$ENDIF ~UNIX}
 
 function FileGetOwnerName(const FileName: string {$IFDEF UNIX}; ResolveSymLinks: Boolean = True {$ENDIF}): string;
