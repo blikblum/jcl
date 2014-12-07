@@ -23,7 +23,7 @@ uses
   JclAbstractContainers, JclAlgorithms, JclArrayLists, JclArraySets, 
   JclBinaryTrees, JclContainerIntf, JclHashMaps, JclHashSets, JclLinkedLists, 
   JclQueues, JclSortedMaps, JclStacks, JclStrHashMap, JclTrees, JclVectors, 
-  FpStringHash;
+  FpStringHash, JclStringConversions;
 
 implementation
 

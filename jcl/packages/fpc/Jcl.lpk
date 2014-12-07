@@ -30,7 +30,7 @@
     <Description Value="JEDI Code Library RTL package"/>
     <License Value="Copyright (C) 1999, 2014 Project JEDI"/>
     <Version Major="2" Minor="7" Build="5300"/>
-    <Files Count="91">
+    <Files Count="92">
       <Item1>
         <Filename Value="..\..\source\common\bzip2.pas"/>
         <UnitName Value="bzip2"/>
@@ -395,6 +395,10 @@
         <Filename Value="..\..\source\include\jcl.inc"/>
         <Type Value="Include"/>
       </Item91>
+      <Item92>
+        <Filename Value="..\..\source\common\JclStringConversions.pas"/>
+        <UnitName Value="JclStringConversions"/>
+      </Item92>
     </Files>
     <RequiredPkgs Count="1">
       <Item1>
