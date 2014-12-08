@@ -606,6 +606,15 @@ uses
   JclMath,
   JclSysUtils;
 
+{$IFDEF FPC}
+{$IFNDEF WINDOWS}
+const
+  CP_ACP = 0;
+  CP_UTF8 = 65001;
+{$ENDIF ~WINDOWS}
+{$ENDIF ~FPC}
+
+
 function StreamCopy(Source: TStream; Dest: TStream; BufferSize: Longint): Int64;
 var
   Buffer: array of Byte;
@@ -791,7 +800,13 @@ begin
     Result := 0;
   {$ENDIF MSWINDOWS}
   {$IFDEF LINUX}
+  {$IFDEF FPC}
+  Result := FileRead(FHandle, Buffer, Count);
+  if Result = -1 then
+    Result := 0;
+  {$ELSE ~FPC}
   Result := __read(Handle, Buffer, Count);
+  {$ENDIF ~FPC}
   {$ENDIF LINUX}
 end;
 
@@ -803,7 +818,13 @@ begin
     Result := 0;
   {$ENDIF MSWINDOWS}
   {$IFDEF LINUX}
+  {$IFDEF FPC}
+  Result := FileWrite(FHandle, Buffer, Count);
+  if Result = -1 then
+    Result := 0;
+  {$ELSE ~FPC}
   Result := __write(Handle, Buffer, Count);
+  {$ENDIF ~FPC}
   {$ENDIF LINUX}
 end;
 
@@ -832,12 +853,19 @@ begin
 end;
 {$ENDIF MSWINDOWS}
 {$IFDEF LINUX}
+{$IFDEF FPC}
+function TJclHandleStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
+begin
+  Result := FileSeek(FHandle, Offset, ord(Origin));
+end;
+{$ELSE ~FPC}
 function TJclHandleStream.Seek(const Offset: Int64; Origin: TSeekOrigin): Int64;
 const
   SeekOrigins: array [TSeekOrigin] of Cardinal = ( SEEK_SET {soBeginning}, SEEK_CUR {soCurrent}, SEEK_END {soEnd} );
 begin
   Result := lseek(Handle, Offset, SeekOrigins[Origin]);
 end;
+{$ENDIF ~FPC}
 {$ENDIF LINUX}
 
 procedure TJclHandleStream.SetSize(const NewSize: Int64);
@@ -848,8 +876,12 @@ begin
     RaiseLastOSError;
   {$ENDIF MSWINDOWS}
   {$IFDEF LINUX}
+  {$IFDEF FPC}
+  FileTruncate(FHandle, NewSize);
+  {$ELSE ~FPC}
   if ftruncate(Handle, Position) = -1 then
     raise EJclStreamError.CreateRes(@RsStreamsSetSizeError);
+  {$ENDIF ~FPC}
   {$ENDIF LINUX}
 end;
 
@@ -866,7 +898,11 @@ begin
   if Mode = fmCreate then
   begin
     {$IFDEF LINUX}
+    {$IFDEF FPC}
+    H := FileCreate(FileName, Mode, Rights);
+    {$ELSE ~FPC}
     H := open(PChar(FileName), O_CREAT or O_RDWR, Rights);
+    {$ENDIF ~FPC}
     {$ENDIF LINUX}
     {$IFDEF MSWINDOWS}
     H := CreateFile(PChar(FileName), GENERIC_READ or GENERIC_WRITE,
@@ -892,7 +928,11 @@ begin
     CloseHandle(Handle);
   {$ENDIF MSWINDOWS}
   {$IFDEF LINUX}
+  {$IFDEF FPC}
+  FileClose(FHandle);
+  {$ELSE ~FPC}
   __close(Handle);
+  {$ENDIF ~FPC}
   {$ENDIF LINUX}
   inherited Destroy;
 end;

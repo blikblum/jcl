@@ -66,7 +66,9 @@ uses
   {$IFDEF BORLAND}
   JclTD32,
   {$ENDIF BORLAND}
-  JclSynch;
+  {$IFDEF THREADSAFE}
+  ,JclSynch
+  {$ENDIF THREADSAFE};
 
 // Diagnostics
 procedure AssertKindOf(const ClassName: string; const Obj: TObject); overload;

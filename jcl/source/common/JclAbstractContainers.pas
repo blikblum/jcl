@@ -51,7 +51,11 @@ uses
   {$ELSE ~HAS_UNITSCOPE}
   Classes,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclContainerIntf{$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE}, JclSysUtils,
+  JclBase, JclContainerIntf,
+  {$IFDEF THREADSAFE}
+  JclSynch,
+  {$ENDIF THREADSAFE}
+  JclSysUtils,
   JclWideStrings,
   JclAnsiStrings;
 

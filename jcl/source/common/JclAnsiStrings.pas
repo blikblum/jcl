@@ -587,7 +587,11 @@ uses
   {$IFDEF SUPPORTS_UNICODE}
   RtlConsts,
   {$ENDIF SUPPORTS_UNICODE}
-  JclLogic, JclResources, JclStreams, JclSynch, JclSysUtils;
+  JclLogic, JclResources, JclStreams,
+  {$IFDEF THREADSAFE}
+  JclSynch,
+  {$ENDIF THREADSAFE}
+  JclSysUtils;
 
 //=== Internal ===============================================================
 
