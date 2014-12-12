@@ -57,3 +57,4 @@ Known Issues
  - Jcl.lpk will not be compiled under non windows with THREADSAFE directive defined. Code enclosed in THREADSAFE directives relies on JclSynch that relies on windows specific code.
  - Some functions/procedures where commented under non windows
  - MultiByteToWideChar/WideCharToMultiByte functions were created in non windows to get JclStringConversions compiled. Since fpc 2.6.4 does not have code page aware string support, working with arbitrary code pages won't work in non windows. Using CP_ACP or CP_UTF8 should work fine.
+ - The libc functions to test characters were imported from fpc amiga RTL and from [https://github.com/evanphx/ulysses-libc/tree/master/src/ctype]. It will not take into account the locale and even for ASCII i'm not sure how accurate are those.
