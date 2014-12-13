@@ -84,6 +84,9 @@ uses
   {$ENDIF MSWINDOWS}
   Classes,
   {$ENDIF ~HAS_UNITSCOPE}
+  {$IFDEF FPCNONWINDOWS}
+  BaseUnix,
+  {$ENDIF}
   JclBase, JclResources;
 
 // Environment Variables
@@ -188,8 +191,8 @@ function GetVolumeSerialNumber(const Drive: string): string;
 function GetVolumeFileSystem(const Drive: string): string;
 function GetVolumeFileSystemFlags(const Volume: string): TFileSystemFlags;
 {$ENDIF MSWINDOWS}
-function GetIPAddress(const HostName: string): string;
 {$IFDEF MSWINDOWS}
+function GetIPAddress(const HostName: string): string;
 procedure GetIpAddresses(Results: TStrings; const HostName: AnsiString); overload;
 {$ENDIF MSWINDOWS}
 procedure GetIpAddresses(Results: TStrings); overload;
@@ -1474,8 +1477,12 @@ end;
 function DelEnvironmentVar(const Name: string): Boolean;
 begin
   {$IFDEF UNIX}
+  {$IFDEF HAS_UNIT_LIBC}
   UnSetEnv(PChar(Name));
   Result := True;
+  {$ELSE ~HAS_UNIT_LIBC}
+  Result := False;
+  {$ENDIF ~HAS_UNIT_LIBC}
   {$ENDIF UNIX}
   {$IFDEF MSWINDOWS}
   Result := SetEnvironmentVariable(PChar(Name), nil);
@@ -1603,13 +1610,17 @@ end;
 
 {$IFDEF UNIX}
 
-function GetEnvironmentVar(const Name: string; var Value: string): Boolean;
+function GetEnvironmentVar(const Name: string; out Value: string): Boolean;
 begin
+  {$IFNDEF FPC}
   Value := getenv(PChar(Name));
+  {$ELSE ~FPC}
+  Value := GetEnvironmentVariable(Name);
+  {$ENDIF FPC}
   Result := Value <> '';
 end;
 
-function GetEnvironmentVar(const Name: string; var Value: string; Expand: Boolean): Boolean;
+function GetEnvironmentVar(const Name: string; out Value: string; Expand: Boolean): Boolean;
 begin
   Result := GetEnvironmentVar(Name, Value); // Expand is there just for x-platform compatibility
 end;
@@ -1710,8 +1721,12 @@ end;
 function SetEnvironmentVar(const Name, Value: string): Boolean;
 begin
   {$IFDEF UNIX}
+  {$IFDEF HAS_UNIT_LIBC}
   SetEnv(PChar(Name), PChar(Value), 1);
   Result := True;
+  {$ELSE ~HAS_UNIT_LIBC}
+  Result := False;
+  {$ENDIF ~HAS_UNIT_LIBC}
   {$ENDIF UNIX}
   {$IFDEF MSWINDOWS}
   Result := SetEnvironmentVariable(PChar(Name), PChar(Value));
@@ -1840,6 +1855,7 @@ end;
 
 function GetCurrentFolder: string;
 {$IFDEF UNIX}
+{$IFNDEF FPC}
 const
   InitialSize = 64;
 var
@@ -1854,15 +1870,17 @@ begin
       StrResetLength(Result);
       Exit;
     end;
-    {$IFDEF FPC}
-    if GetLastOSError <> ERANGE then
-    {$ELSE ~FPC}
     if GetLastError <> ERANGE then
-    {$ENDIF ~FPC}
+
       RaiseLastOSError;
     Size := Size * 2;
   end;
 end;
+{$ELSE FPC}
+begin
+  Result := GetCurrentDir;
+end;
+{$ENDIF ~FPC}
 {$ENDIF UNIX}
 {$IFDEF MSWINDOWS}
 var
@@ -2167,25 +2185,22 @@ end;
 
 {$ENDIF MSWINDOWS}
 
+{$IFDEF MSWINDOWS}
 { TODO -cDoc: Contributor: twm }
 
 function GetIPAddress(const HostName: string): string;
 var
-  {$IFDEF MSWINDOWS}
   R: Integer;
   WSAData: TWSAData;
-  {$ENDIF MSWINDOWS}
   HostEnt: PHostEnt;
   Host: AnsiString;
   SockAddr: TSockAddrIn;
 begin
   Result := '';
-  {$IFDEF MSWINDOWS}
   WSAData.wVersion := 0;
   R := WSAStartup(MakeWord(1, 1), WSAData);
   if R = 0 then
     try
-  {$ENDIF MSWINDOWS}
       Host := AnsiString(HostName);
       if Host = '' then
       begin
@@ -2198,15 +2213,13 @@ begin
         SockAddr.sin_addr.S_addr := Longint(PLongint(HostEnt^.h_addr_list^)^);
         Result := string(AnsiString(inet_ntoa(SockAddr.sin_addr)));
       end;
-    {$IFDEF MSWINDOWS}
     finally
       WSACleanup;
     end;
-    {$ENDIF MSWINDOWS}
 end;
+{$ENDIF ~MSWINDOWS}
 
 { TODO -cDoc: Donator: twm }
-
 {$IFDEF MSWINDOWS}
 procedure GetIpAddresses(Results: TStrings);
 begin
@@ -2272,6 +2285,7 @@ end;
 // note that this will append to Results!
 //
 
+{$IFDEF HAS_UNIT_LIBC}
 procedure GetIpAddresses(Results: TStrings);
 var
   Sock: Integer;
@@ -2320,6 +2334,12 @@ begin
     Libc.__close(Sock)
   end;
 end;
+{$ELSE ~HAS_UNIT_LIBC}
+procedure GetIpAddresses(Results: TStrings);
+begin
+  {$NOTE GetIpAddresses not implemented}
+end;
+{$ENDIF ~HAS_UNIT_LIBC}
 
 {$ENDIF UNIX}
 
@@ -2329,7 +2349,11 @@ function GetLocalComputerName: string;
 var
   MachineInfo: utsname;
 begin
+  {$IFNDEF FPC}
   uname(MachineInfo);
+  {$ELSE}
+  FpUname(MachineInfo);
+  {$ENDIF}
   Result := MachineInfo.nodename;
 end;
 {$ENDIF LINUX}
@@ -2351,7 +2375,7 @@ end;
 function GetLocalUserName: string;
 {$IFDEF UNIX}
 begin
-  Result := GetEnv('USER');
+  GetEnvironmentVar('USER', Result);
 end;
 {$ENDIF UNIX}
 {$IFDEF MSWINDOWS}
@@ -2427,8 +2451,18 @@ function GetDomainName: string;
 var
   MachineInfo: utsname;
 begin
+  {$IFNDEF FPC}
   uname(MachineInfo);
+  {$ELSE ~FPC}
+  FpUname(MachineInfo);
+  {$ENDIF ~FPC}
+  {$IFNDEF FPC}
   Result := MachineInfo.domainname;
+  {$ELSE ~FPC}
+  Result := MachineInfo.Domain;
+  {$ENDIF ~FPC}
+end;
+
 end;
 {$ENDIF UNIX}
 {$IFDEF MSWINDOWS}
@@ -2577,7 +2611,7 @@ const
   CommLen = 16;  // synchronize with size of comm in struct task_struct in
                  //     /usr/include/linux/sched.h
   SProcDirectory = '/proc';
-
+{$IFDEF HAS_UNIT_LIBC}
 function RunningProcessesList(const List: TStrings; FullPath: Boolean): Boolean;
 var
   ProcDir: PDirectoryStream;
@@ -2643,6 +2677,13 @@ begin
       List.EndUpdate;
     end;
   end;
+end;
+{$ELSE HAS_UNIT_LIBC}
+{$ENDIF HAS_UNIT_LIBC}
+function RunningProcessesList(const List: TStrings; FullPath: Boolean): Boolean;
+begin
+  Result := False;
+  {$NOTE RunningProcessesList not implemented}
 end;
 
 {$ENDIF UNIX}

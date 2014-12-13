@@ -9,15 +9,23 @@
         <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
-    <Files Count="2">
+    <Files Count="4">
       <Item1>
         <Filename Value="../../source/common/JclSynch.pas"/>
         <UnitName Value="JclSynch"/>
       </Item1>
       <Item2>
-        <Filename Value="../../source/common/JclStringConversions.pas"/>
-        <UnitName Value="JclStringConversions"/>
+        <Filename Value="../../source/common/JclUnitVersioning.pas"/>
+        <UnitName Value="JclUnitVersioning"/>
       </Item2>
+      <Item3>
+        <Filename Value="../../source/common/JclUnitVersioningProviders.pas"/>
+        <UnitName Value="JclUnitVersioningProviders"/>
+      </Item3>
+      <Item4>
+        <Filename Value="../../source/common/JclSysInfo.pas"/>
+        <UnitName Value="JclSysInfo"/>
+      </Item4>
     </Files>
     <Type Value="RunAndDesignTime"/>
     <RequiredPkgs Count="1">

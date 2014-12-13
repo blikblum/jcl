@@ -633,8 +633,10 @@ procedure ListSetItem(var List: string; const Separator: string;
 function ListItemIndex(const List, Separator, Item: string): Integer;
 
 // RTL package information
+{$IFDEF MSWINDOWS}
 function SystemTObjectInstance: TJclAddr;
 function IsCompiledWithPackages: Boolean;
+{$ENDIF}
 
 // GUID
 function JclGUIDToString(const GUID: TGUID): string;
@@ -818,7 +820,11 @@ uses
   {$ENDIF HAS_UNIT_ANSISTRINGS}
   {$ENDIF ~HAS_UNITSCOPE}
   JclFileUtils, JclMath, JclResources, JclStrings,
-  JclStringConversions, JclSysInfo, JclWin32;
+  JclStringConversions
+  {$IFDEF MSWINDOWS}
+  ,JclSysInfo, JclWin32
+  {$ENDIF ~MSWINDOWS}
+  ;
 
 // memory initialization
 procedure ResetMemory(out P; Size: Longint);
@@ -3517,7 +3523,7 @@ begin
 end;
 
 //=== RTL package information ================================================
-
+{$IFDEF MSWINDOWS}
 function SystemTObjectInstance: TJclAddr;
 begin
   Result := ModuleFromAddr(Pointer(System.TObject));
@@ -3527,7 +3533,7 @@ function IsCompiledWithPackages: Boolean;
 begin
   Result := SystemTObjectInstance <> HInstance;
 end;
-
+{$ENDIF MSWINDOWS}
 //=== GUID ===================================================================
 
 function JclGUIDToString(const GUID: TGUID): string;

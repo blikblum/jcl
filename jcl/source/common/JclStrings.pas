@@ -242,8 +242,10 @@ procedure StrUpperInPlace(var S: string);
 procedure StrUpperBuff(S: PChar);
 
 // String Management
+{$IFNDEF FPC}
 procedure StrAddRef(var S: string);
 procedure StrDecRef(var S: string);
+{$ENDIF ~FPC}
 function StrLength(const S: string): SizeInt;
 function StrRefCount(const S: string): SizeInt;
 
@@ -648,9 +650,12 @@ uses
   {$ENDIF ~HAS_UNITSCOPE}
   {$ENDIF SUPPORTS_UNICODE}
   JclLogic, JclResources, JclStreams,
-  {$IFDEF THREADSAFE}
+  {$IFNDEF FPC}
   JclSynch,
-  {$ENDIF THREADSAFE}
+  {$ENDIF ~FPC}
+  {$IFDEF FPCNONWINDOWS}
+  FpLibcCompatibility,
+  {$ENDIF ~FPCNONWINDOWS}
   JclSysUtils;
 
 //=== Internal ===============================================================
@@ -2003,6 +2008,7 @@ end;
 
 //=== String Management ======================================================
 
+{$IFNDEF FPC}
 procedure StrAddRef(var S: string);
 var
   P: PStrRec;
@@ -2038,6 +2044,7 @@ begin
     end;
   end;
 end;
+{$ENDIF}
 
 function StrLength(const S: string): SizeInt;
 var
@@ -4592,7 +4599,15 @@ end;
 
 function TTabSetData.AddRef: SizeInt;
 begin
+  {$IFNDEF FPC}
   Result := LockedInc(FRefCount);
+  {$ELSE ~FPC}
+  {$ifdef CPU64}
+  Result := InterLockedIncrement64(FRefCount);
+  {$ELSE ~CPU64}
+  Result := InterLockedIncrement(FRefCount);
+  {$ENDIF}
+  {$ENDIF FPC}
 end;
 
 procedure TTabSetData.CalcRealWidth;
@@ -4622,7 +4637,15 @@ end;
 
 function TTabSetData.ReleaseRef: SizeInt;
 begin
+  {$IFNDEF FPC}
   Result := LockedDec(FRefCount);
+  {$ELSE ~FPC}
+  {$ifdef CPU64}
+  Result := InterLockedDecrement64(FRefCount);
+  {$ELSE ~CPU64}
+  Result := InterLockedDecrement(FRefCount);
+  {$ENDIF}
+  {$ENDIF FPC}
   if Result <= 0 then
     Destroy;
 end;
