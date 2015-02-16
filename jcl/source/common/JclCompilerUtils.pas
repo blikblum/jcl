@@ -52,6 +52,9 @@ uses
   {$ENDIF MSWINDOWS}
   Classes, SysUtils, IniFiles,
   {$ENDIF ~HAS_UNITSCOPE}
+  {$IFDEF FPC}
+  JclWin32Process,
+  {$ENDIF ~FPC}
   JclBase, JclSysUtils;
 
 type
@@ -784,11 +787,19 @@ begin
   if Assigned(FOutputCallback) then
   begin
     OemTextHandler(LaunchCommand);
+    {$IFDEF FPC}
+    Result := JclWin32Process.Execute(LaunchCommand, OemTextHandler) = 0;
+    {$ELSE ~FPC}
     Result := JclSysUtils.Execute(LaunchCommand, OemTextHandler) = 0;
+    {$ENDIF ~FPC}
   end
   else
   begin
+    {$IFDEF FPC}
+    Result := JclWin32Process.Execute(LaunchCommand, FOutput) = 0;
+    {$ELSE ~FPC}
     Result := JclSysUtils.Execute(LaunchCommand, FOutput) = 0;
+    {$ENDIF ~FPC}
     {$IFDEF MSWINDOWS}
     FOutput := string(StrOemToAnsi(AnsiString(FOutput)));
     {$ENDIF MSWINDOWS}
