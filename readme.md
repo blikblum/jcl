@@ -22,7 +22,7 @@ Requirements
 
 Freepascal 2.6.4
 
-Lazarus 1.2.x
+Lazarus 1.2.x or above
 
 How to install
 --------------
@@ -53,8 +53,9 @@ Remarks
 Known Issues
 ------------
  - JclVcl.lpk, JclDeveloperTools.lpk compiles only in windows 
+ - In the first try to compile JclVcl.lpk package, the compiler will abort due to an Access violation. The compilation will succeed in the second try.
  - Many units from Jcl.lpk relies on Windows specific code that cannot be ported in straight manner to other enviroments. It was created a new package JclWin.lpk with the windows specific units.
  - Jcl.lpk will not be compiled under non windows with THREADSAFE directive defined. Code enclosed in THREADSAFE directives relies on JclSynch that relies on windows specific code.
  - Some functions/procedures where commented under non windows
  - MultiByteToWideChar/WideCharToMultiByte functions were created in non windows to get JclStringConversions compiled. Since fpc 2.6.4 does not have code page aware string support, working with arbitrary code pages won't work in non windows. Using CP_ACP or CP_UTF8 should work fine.
- - The libc functions to test characters were imported from fpc amiga RTL and from [https://github.com/evanphx/ulysses-libc/tree/master/src/ctype]. It will not take into account the locale and even for ASCII i'm not sure how accurate are those.
+ - Fpc does note have a Mapi unit even in Windows, so JclMapi is not compiled
