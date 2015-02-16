@@ -53,7 +53,7 @@ uses
   {$ELSE ~HAS_UNITSCOPE}
   Classes,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclAbstractContainers, JclContainerIntf, {$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE};
+  JclBase, JclAbstractContainers, JclContainerIntf {$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE};
 
 
 type

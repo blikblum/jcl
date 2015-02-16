@@ -70,6 +70,9 @@ uses
   {$ELSE}
   FpStringHash,
   {$ENDIF FPC}
+  {$IFDEF FPCNONWINDOWS}
+  FpWinAPICompatibility,
+  {$ENDIF FPCNONWINDOWS}
   Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
   JclBase, JclStreams;

@@ -44,7 +44,7 @@ uses
   JclUnitVersioning,
   {$ENDIF UNITVERSIONING}
   {$IFDEF HAS_UNIT_LIBC}
-  Libc,
+  libclite,
   {$ENDIF HAS_UNIT_LIBC}
   {$IFDEF HAS_UNITSCOPE}
   System.Classes,

@@ -16,6 +16,7 @@ const
 
 type
   LCID = DWORD;
+  DWORD_PTR = PtrUInt;
 
 function MultiByteToWideChar(CodePage: DWord; dwFlags: DWord; lpMultiByteStr: PAnsiChar; cchMultiByte: longint; lpWideCharStr:PWideChar; cchWideChar:longint): longint;
 function WideCharToMultiByte(CodePage: DWord; dwFlags:DWORD; lpWideCharStr: PWideChar; cchWideChar:longint; lpMultiByteStr: PAnsiChar;cchMultiByte:longint; lpDefaultChar: PAnsiChar; lpUsedDefaultChar: PBoolean):longint;

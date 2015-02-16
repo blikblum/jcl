@@ -378,7 +378,7 @@ uses
   {$ENDIF BZIP2_LINKONREQUEST}
   Types,
   {$IFDEF HAS_UNIT_LIBC}
-  Libc,
+  libclite,
   {$ENDIF HAS_UNIT_LIBC}
   SysUtils;
   {$ENDIF ~HAS_UNITSCOPE}

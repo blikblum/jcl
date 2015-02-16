@@ -65,7 +65,7 @@ uses
   Windows,
   {$ENDIF MSWINDOWS}
   {$IFDEF HAS_UNIT_LIBC}
-  Libc,
+  libclite,
   {$ENDIF HAS_UNIT_LIBC}
   {$IFDEF UNITVERSIONING}
   JclUnitVersioning,

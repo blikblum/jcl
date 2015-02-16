@@ -66,6 +66,9 @@ uses
   {$IFDEF MSWINDOWS}
   Windows,
   {$ENDIF MSWINDOWS}
+  {$IFDEF FPCNONWINDOWS}
+  FpWinAPICompatibility,
+  {$ENDIF -FPCNONWINDOWS}
   SysUtils, Classes, TypInfo, SyncObjs,
   {$ENDIF ~HAS_UNITSCOPE}
   JclBase {$IFDEF THREADSAFE}, JclSynch{$ENDIF THREADSAFE};
@@ -516,7 +519,7 @@ function Execute(const CommandLine: string; var Output, Error: string;
   RawOutput: Boolean = False; RawError: Boolean = False; AbortPtr: PBoolean = nil; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
 function Execute(const CommandLine: string; AbortEvent: TJclEvent;
   var Output, Error: string; RawOutput: Boolean = False; RawError: Boolean = False; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
-{$ENDIF FPC}
+
 
 type
 {$HPPEMIT 'namespace Jclsysutils'}
@@ -566,6 +569,7 @@ type
     property OutputCallback: TTextHandler read GetOutputCallback write SetOutputCallback;
     property Output: string read GetOutput;
   end;
+{$ENDIF FPC}
 
 // Console Utilities
 function ReadKey: Char;
@@ -3229,8 +3233,6 @@ begin
   Result := InternalExecute(CommandLine, nil, AbortEvent, Output, OutputLineCallback, RawOutput, False, Error, ErrorLineCallback, RawError, ProcessPriority);
 end;
 
-{$ENDIF FPC}
-
 //=== { TJclCommandLineTool } ================================================
 
 constructor TJclCommandLineTool.Create(const AExeName: string);
@@ -3292,6 +3294,8 @@ procedure TJclCommandLineTool.SetOutputCallback(const CallbackMethod: TTextHandl
 begin
   FOutputCallback := CallbackMethod;
 end;
+
+{$ENDIF FPC}
 
 //=== Console Utilities ======================================================
 
