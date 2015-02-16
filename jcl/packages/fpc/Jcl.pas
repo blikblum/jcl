@@ -23,7 +23,7 @@ uses
   JclContainerIntf, JclHashMaps, JclHashSets, JclLinkedLists, JclQueues, 
   JclSortedMaps, JclStacks, JclStrHashMap, JclTrees, JclVectors, FpStringHash, 
   JclStringConversions, FpWinAPICompatibility, FpLibcCompatibility, 
-  JclSimpleXml, JclUnicode;
+  JclSimpleXml, JclUnicode, kerneldefs, kernelioctl, libclite;
 
 implementation
 
