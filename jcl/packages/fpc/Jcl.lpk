@@ -30,7 +30,7 @@
     <Description Value="JEDI Code Library RTL package"/>
     <License Value="Copyright (C) 1999, 2014 Project JEDI"/>
     <Version Major="2" Minor="7" Build="5300"/>
-    <Files Count="55">
+    <Files Count="54">
       <Item1>
         <Filename Value="..\..\source\common\bzip2.pas"/>
         <UnitName Value="bzip2"/>
@@ -247,10 +247,6 @@
         <Filename Value="..\..\source\common\JclSysInfo.pas"/>
         <UnitName Value="JclSysInfo"/>
       </Item54>
-      <Item55>
-        <Filename Value="..\..\source\fpc\ConditionalUnits.pas"/>
-        <UnitName Value="ConditionalUnits"/>
-      </Item55>
     </Files>
     <RequiredPkgs Count="2">
       <Item1>
