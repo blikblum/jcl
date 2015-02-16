@@ -52,7 +52,9 @@ uses
   {$ELSE ~HAS_UNITSCOPE}
   Windows, Classes, Messages,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclFileUtils, JclSynch, JclWin32;
+  JclBase, JclFileUtils,
+  JclSynch,
+  JclWin32;
 
 // Message constants and types
 type

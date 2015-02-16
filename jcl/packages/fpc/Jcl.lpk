@@ -1,17 +1,15 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Package Version="3">
+  <Package Version="4">
     <PathDelim Value="\"/>
     <Name Value="Jcl"/>
-    <AddToProjectUsesSection Value="False"/>
     <Author Value="Project JEDI"/>
-    <AutoUpdate Value="OnRebuildingAll"/>
     <CompilerOptions>
-      <Version Value="9"/>
+      <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <IncludeFiles Value="..\..\source\include\"/>
-        <OtherUnitFiles Value=".;..\..\source\common;..\..\source\windows;;..\..\lib\fpc\$(TargetCPU)-$(TargetOS)"/>
+        <IncludeFiles Value="..\..\source\include;..\..\source\fpc\libclite"/>
+        <OtherUnitFiles Value="..\..\source\common;..\..\source\windows;..\..\source\fpc;..\..\source\fpc\libclite"/>
         <UnitOutputDirectory Value="..\..\lib\fpc\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <Parsing>
@@ -24,23 +22,15 @@
       </Parsing>
       <CodeGeneration>
         <Optimizations>
+          <OptimizationLevel Value="2"/>
           <VariablesInRegisters Value="True"/>
-          <OptimizationLevel Value="3"/>
         </Optimizations>
       </CodeGeneration>
-      <Linking>
-        <Debugging>
-          <UseLineInfoUnit Value="False"/>
-        </Debugging>
-      </Linking>
-      <Other>
-        <CompilerPath Value="$(CompPath)"/>
-      </Other>
     </CompilerOptions>
     <Description Value="JEDI Code Library RTL package"/>
     <License Value="Copyright (C) 1999, 2014 Project JEDI"/>
-    <Version Major="2" Minor="7" Release="0" Build="5300"/>
-    <Files Count="74">
+    <Version Major="2" Minor="7" Build="5300"/>
+    <Files Count="54">
       <Item1>
         <Filename Value="..\..\source\common\bzip2.pas"/>
         <UnitName Value="bzip2"/>
@@ -122,232 +112,153 @@
         <UnitName Value="JclSchedule"/>
       </Item20>
       <Item21>
-        <Filename Value="..\..\source\common\JclSimpleXml.pas"/>
-        <UnitName Value="JclSimpleXml"/>
-      </Item21>
-      <Item22>
         <Filename Value="..\..\source\common\JclStatistics.pas"/>
         <UnitName Value="JclStatistics"/>
-      </Item22>
-      <Item23>
+      </Item21>
+      <Item22>
         <Filename Value="..\..\source\common\JclStreams.pas"/>
         <UnitName Value="JclStreams"/>
-      </Item23>
-      <Item24>
-        <Filename Value="..\..\source\common\JclStringConversions.pas"/>
-        <UnitName Value="JclStringConversions"/>
-      </Item24>
-      <Item25>
+      </Item22>
+      <Item23>
         <Filename Value="..\..\source\common\JclStringLists.pas"/>
         <UnitName Value="JclStringLists"/>
-      </Item25>
-      <Item26>
+      </Item23>
+      <Item24>
         <Filename Value="..\..\source\common\JclStrings.pas"/>
         <UnitName Value="JclStrings"/>
-      </Item26>
-      <Item27>
-        <Filename Value="..\..\source\common\JclSynch.pas"/>
-        <UnitName Value="JclSynch"/>
-      </Item27>
-      <Item28>
-        <Filename Value="..\..\source\common\JclSysInfo.pas"/>
-        <UnitName Value="JclSysInfo"/>
-      </Item28>
-      <Item29>
+      </Item24>
+      <Item25>
         <Filename Value="..\..\source\common\JclSysUtils.pas"/>
         <UnitName Value="JclSysUtils"/>
-      </Item29>
-      <Item30>
-        <Filename Value="..\..\source\common\JclUnicode.pas"/>
-        <UnitName Value="JclUnicode"/>
-      </Item30>
-      <Item31>
+      </Item25>
+      <Item26>
         <Filename Value="..\..\source\common\JclUnitConv.pas"/>
         <UnitName Value="JclUnitConv"/>
-      </Item31>
-      <Item32>
-        <Filename Value="..\..\source\common\JclUnitVersioning.pas"/>
-        <UnitName Value="JclUnitVersioning"/>
-      </Item32>
-      <Item33>
-        <Filename Value="..\..\source\common\JclUnitVersioningProviders.pas"/>
-        <UnitName Value="JclUnitVersioningProviders"/>
-      </Item33>
-      <Item34>
+      </Item26>
+      <Item27>
         <Filename Value="..\..\source\common\JclValidation.pas"/>
         <UnitName Value="JclValidation"/>
-      </Item34>
-      <Item35>
+      </Item27>
+      <Item28>
         <Filename Value="..\..\source\common\JclWideStrings.pas"/>
         <UnitName Value="JclWideStrings"/>
-      </Item35>
-      <Item36>
+      </Item28>
+      <Item29>
         <Filename Value="..\..\source\common\pcre.pas"/>
         <UnitName Value="pcre"/>
-      </Item36>
-      <Item37>
+      </Item29>
+      <Item30>
         <Filename Value="..\..\source\common\zlibh.pas"/>
         <UnitName Value="zlibh"/>
+      </Item30>
+      <Item31>
+        <Filename Value="..\..\source\common\JclExprEval.pas"/>
+        <UnitName Value="JclExprEval"/>
+      </Item31>
+      <Item32>
+        <Filename Value="..\..\source\common\JclAbstractContainers.pas"/>
+        <UnitName Value="JclAbstractContainers"/>
+      </Item32>
+      <Item33>
+        <Filename Value="..\..\source\common\JclAlgorithms.pas"/>
+        <UnitName Value="JclAlgorithms"/>
+      </Item33>
+      <Item34>
+        <Filename Value="..\..\source\common\JclArrayLists.pas"/>
+        <UnitName Value="JclArrayLists"/>
+      </Item34>
+      <Item35>
+        <Filename Value="..\..\source\common\JclArraySets.pas"/>
+        <UnitName Value="JclArraySets"/>
+      </Item35>
+      <Item36>
+        <Filename Value="..\..\source\common\JclBinaryTrees.pas"/>
+        <UnitName Value="JclBinaryTrees"/>
+      </Item36>
+      <Item37>
+        <Filename Value="..\..\source\common\JclContainerIntf.pas"/>
+        <UnitName Value="JclContainerIntf"/>
       </Item37>
       <Item38>
-        <Filename Value="..\..\source\windows\Hardlinks.pas"/>
-        <UnitName Value="Hardlinks"/>
+        <Filename Value="..\..\source\common\JclHashMaps.pas"/>
+        <UnitName Value="JclHashMaps"/>
       </Item38>
       <Item39>
-        <Filename Value="..\..\source\windows\JclAppInst.pas"/>
-        <UnitName Value="JclAppInst"/>
+        <Filename Value="..\..\source\common\JclHashSets.pas"/>
+        <UnitName Value="JclHashSets"/>
       </Item39>
       <Item40>
-        <Filename Value="..\..\source\windows\JclCIL.pas"/>
-        <UnitName Value="JclCIL"/>
+        <Filename Value="..\..\source\common\JclLinkedLists.pas"/>
+        <UnitName Value="JclLinkedLists"/>
       </Item40>
       <Item41>
-        <Filename Value="..\..\source\windows\JclCLR.pas"/>
-        <UnitName Value="JclCLR"/>
+        <Filename Value="..\..\source\common\JclQueues.pas"/>
+        <UnitName Value="JclQueues"/>
       </Item41>
       <Item42>
-        <Filename Value="..\..\source\windows\JclCOM.pas"/>
-        <UnitName Value="JclCOM"/>
+        <Filename Value="..\..\source\common\JclSortedMaps.pas"/>
+        <UnitName Value="JclSortedMaps"/>
       </Item42>
       <Item43>
-        <Filename Value="..\..\source\windows\JclConsole.pas"/>
-        <UnitName Value="JclConsole"/>
+        <Filename Value="..\..\source\common\JclStacks.pas"/>
+        <UnitName Value="JclStacks"/>
       </Item43>
       <Item44>
-        <Filename Value="..\..\source\windows\JclCppException.pas"/>
-        <UnitName Value="JclCppException"/>
+        <Filename Value="..\..\source\common\JclStrHashMap.pas"/>
+        <UnitName Value="JclStrHashMap"/>
       </Item44>
       <Item45>
-        <Filename Value="..\..\source\windows\JclDebug.pas"/>
-        <UnitName Value="JclDebug"/>
+        <Filename Value="..\..\source\common\JclTrees.pas"/>
+        <UnitName Value="JclTrees"/>
       </Item45>
       <Item46>
-        <Filename Value="..\..\source\windows\JclDebugSerialization.pas"/>
-        <UnitName Value="JclDebugSerialization"/>
+        <Filename Value="..\..\source\common\JclVectors.pas"/>
+        <UnitName Value="JclVectors"/>
       </Item46>
       <Item47>
-        <Filename Value="..\..\source\windows\JclDebugXMLDeserializer.pas"/>
-        <UnitName Value="JclDebugXMLDeserializer"/>
+        <Filename Value="..\..\source\fpc\FpStringHash.pas"/>
+        <UnitName Value="FpStringHash"/>
       </Item47>
       <Item48>
-        <Filename Value="..\..\source\windows\JclDebugXMLSerializer.pas"/>
-        <UnitName Value="JclDebugXMLSerializer"/>
+        <Filename Value="..\..\source\include\jclfpc.inc"/>
+        <Type Value="Include"/>
       </Item48>
       <Item49>
-        <Filename Value="..\..\source\windows\JclDotNet.pas"/>
-        <UnitName Value="JclDotNet"/>
+        <Filename Value="..\..\source\include\jcl.inc"/>
+        <Type Value="Include"/>
       </Item49>
       <Item50>
-        <Filename Value="..\..\source\windows\JclHookExcept.pas"/>
-        <UnitName Value="JclHookExcept"/>
+        <Filename Value="..\..\source\common\JclStringConversions.pas"/>
+        <UnitName Value="JclStringConversions"/>
       </Item50>
       <Item51>
-        <Filename Value="..\..\source\windows\JclLANMan.pas"/>
-        <UnitName Value="JclLANMan"/>
+        <Filename Value="..\..\source\fpc\FpWinAPICompatibility.pas"/>
+        <UnitName Value="FpWinAPICompatibility"/>
       </Item51>
       <Item52>
-        <Filename Value="..\..\source\windows\JclLocales.pas"/>
-        <UnitName Value="JclLocales"/>
+        <Filename Value="..\..\source\common\JclSimpleXml.pas"/>
+        <UnitName Value="JclSimpleXml"/>
       </Item52>
       <Item53>
-        <Filename Value="..\..\source\windows\JclMetadata.pas"/>
-        <UnitName Value="JclMetadata"/>
+        <Filename Value="..\..\source\common\JclUnicode.pas"/>
+        <UnitName Value="JclUnicode"/>
       </Item53>
       <Item54>
-        <Filename Value="..\..\source\windows\JclMiscel.pas"/>
-        <UnitName Value="JclMiscel"/>
+        <Filename Value="..\..\source\common\JclSysInfo.pas"/>
+        <UnitName Value="JclSysInfo"/>
       </Item54>
-      <Item55>
-        <Filename Value="..\..\source\windows\JclMsdosSys.pas"/>
-        <UnitName Value="JclMsdosSys"/>
-      </Item55>
-      <Item56>
-        <Filename Value="..\..\source\windows\JclMultimedia.pas"/>
-        <UnitName Value="JclMultimedia"/>
-      </Item56>
-      <Item57>
-        <Filename Value="..\..\source\windows\JclNTFS.pas"/>
-        <UnitName Value="JclNTFS"/>
-      </Item57>
-      <Item58>
-        <Filename Value="..\..\source\windows\JclPeImage.pas"/>
-        <UnitName Value="JclPeImage"/>
-      </Item58>
-      <Item59>
-        <Filename Value="..\..\source\windows\JclRegistry.pas"/>
-        <UnitName Value="JclRegistry"/>
-      </Item59>
-      <Item60>
-        <Filename Value="..\..\source\windows\JclSecurity.pas"/>
-        <UnitName Value="JclSecurity"/>
-      </Item60>
-      <Item61>
-        <Filename Value="..\..\source\windows\JclShell.pas"/>
-        <UnitName Value="JclShell"/>
-      </Item61>
-      <Item62>
-        <Filename Value="..\..\source\windows\JclStructStorage.pas"/>
-        <UnitName Value="JclStructStorage"/>
-      </Item62>
-      <Item63>
-        <Filename Value="..\..\source\windows\JclSvcCtrl.pas"/>
-        <UnitName Value="JclSvcCtrl"/>
-      </Item63>
-      <Item64>
-        <Filename Value="..\..\source\windows\JclTask.pas"/>
-        <UnitName Value="JclTask"/>
-      </Item64>
-      <Item65>
-        <Filename Value="..\..\source\windows\JclTD32.pas"/>
-        <UnitName Value="JclTD32"/>
-      </Item65>
-      <Item66>
-        <Filename Value="..\..\source\windows\JclTimeZones.pas"/>
-        <UnitName Value="JclTimeZones"/>
-      </Item66>
-      <Item67>
-        <Filename Value="..\..\source\windows\JclWin32.pas"/>
-        <UnitName Value="JclWin32"/>
-      </Item67>
-      <Item68>
-        <Filename Value="..\..\source\windows\JclWin32Ex.pas"/>
-        <UnitName Value="JclWin32Ex"/>
-      </Item68>
-      <Item69>
-        <Filename Value="..\..\source\windows\JclWinMIDI.pas"/>
-        <UnitName Value="JclWinMIDI"/>
-      </Item69>
-      <Item70>
-        <Filename Value="..\..\source\windows\mscoree_TLB.pas"/>
-        <UnitName Value="mscoree_TLB"/>
-      </Item70>
-      <Item71>
-        <Filename Value="..\..\source\windows\mscorlib_TLB.pas"/>
-        <UnitName Value="mscorlib_TLB"/>
-      </Item71>
-      <Item72>
-        <Filename Value="..\..\source\windows\MSTask.pas"/>
-        <UnitName Value="MSTask"/>
-      </Item72>
-      <Item73>
-        <Filename Value="..\..\source\windows\sevenzip.pas"/>
-        <UnitName Value="sevenzip"/>
-      </Item73>
-      <Item74>
-        <Filename Value="..\..\source\windows\Snmp.pas"/>
-        <UnitName Value="Snmp"/>
-      </Item74>
     </Files>
-    <RequiredPkgs Count="1">
+    <RequiredPkgs Count="2">
       <Item1>
-        <PackageName Value="FCL"/>
+        <PackageName Value="LCL"/>
       </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
     </RequiredPkgs>
     <UsageOptions>
-      <IncludePath Value="..\..\source\include\"/>
-      <LibraryPath Value="$(PkgOutDir)\"/>
-      <ObjectPath Value="..\..\lib\fpc\$(TargetCPU)-$(TargetOS)\"/>
-      <UnitPath Value="$(PkgOutDir)\"/>
+      <IncludePath Value="..\..\source\include"/>
+      <UnitPath Value="$(PkgOutDir)"/>
     </UsageOptions>
     <PublishOptions>
       <Version Value="2"/>

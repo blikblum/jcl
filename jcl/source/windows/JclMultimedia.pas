@@ -52,7 +52,9 @@ uses
   {$ELSE ~HAS_UNITSCOPE}
   Windows, Classes, MMSystem, Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclSynch, JclStrings;
+  JclBase,
+  JclSynch,
+  JclStrings;
 
 type
   // Multimedia timer

@@ -73,7 +73,7 @@ object ExprEvalForm: TExprEvalForm
     ItemHeight = 13
     Sorted = True
     TabOrder = 4
-    OnClick = FuncListClick
+    OnChange = FuncListChange
   end
   object ValueEdit: TEdit
     Left = 271

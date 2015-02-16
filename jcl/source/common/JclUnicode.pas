@@ -189,6 +189,9 @@ uses
   Character,
   {$ENDIF HAS_UNIT_CHARACTER}
   {$ENDIF ~HAS_UNITSCOPE}
+  {$IFDEF FPCNONWINDOWS}
+  FpWinAPICompatibility,
+  {$ENDIF ~FPCNONWINDOWS}
   JclBase;
 
 {$IFNDEF FPC}
@@ -1546,14 +1549,18 @@ function UnicodeIsVariationSelector(C: UCS4): Boolean;
 {$ENDIF ~UNICODE_RTL_DATABASE}
 
 // Utility functions
+{$IFDEF MSWINDOWS}
 function CharSetFromLocale(Language: LCID): Byte;
 function GetCharSetFromLocale(Language: LCID; out FontCharSet: Byte): Boolean;
+{$ENDIF MSWINDOWS}
 function CodePageFromLocale(Language: LCID): Word;
 function CodeBlockName(const CB: TUnicodeBlock): string;
 function CodeBlockRange(const CB: TUnicodeBlock): TUnicodeBlockRange;
 function CodeBlockFromChar(const C: UCS4): TUnicodeBlock;
+{$IFDEF MSWINDOWS}
 function KeyboardCodePage: Word;
 function KeyUnicode(C: Char): WideChar;
+{$ENDIF MSWINDOWS}
 function StringToWideStringEx(const S: AnsiString; CodePage: Word): WideString;
 function TranslateString(const S: AnsiString; CP1, CP2: Word): AnsiString;
 function WideStringToStringEx(const WS: WideString; CodePage: Word): AnsiString;
@@ -1638,7 +1645,13 @@ uses
   JclCompression,
   {$ENDIF ~UNICODE_RAW_DATA}
   {$ENDIF ~UNICODE_RTL_DATABASE}
-  JclResources, JclSynch, JclSysUtils, JclSysInfo, JclStringConversions, JclWideStrings;
+  JclResources,
+  {$IFNDEF FPCNONWINDOWS}
+  JclSynch,
+  {$ELSE FPCNONWINDOWS}
+  syncobjs,
+  {$ENDIF FPCNONWINDOWS}
+  JclSysUtils, JclStringConversions, JclWideStrings;
 
 const
   {$IFDEF FPC} // declarations from unit [Rtl]Consts
@@ -1714,7 +1727,11 @@ end;
 var
   // As the global data can be accessed by several threads it should be guarded
   // while the data is loaded.
+  {$IFNDEF FPCNONWINDOWS}
   LoadInProgress: TJclCriticalSection;
+  {$ELSE ~FPCNONWINDOWS}
+  LoadInProgress: TCriticalSection;
+  {$ENDIF ~FPCNONWINDOWS}
 
 function OpenResourceStream(const ResName: string): TJclEasyStream;
 var
@@ -5136,7 +5153,9 @@ end;
 constructor TWideStrings.Create;
 begin
   inherited Create;
+  {$IFNDEF FPCNONWINDOWS}
   FLanguage := GetUserDefaultLCID;
+  {$ENDIF ~FPCNONWINDOWS}
   FNormalizationForm := nfC;
   FSaveFormat := sfUnicodeLSB;
 end;
@@ -7725,6 +7744,7 @@ begin
 end;
 {$ENDIF ~UNICODE_RTL_DATABASE}
 
+{$IFDEF MSWINDOWS}
 // I need to fix a problem (introduced by MS) here. The first parameter can be a pointer
 // (and is so defined) or can be a normal DWORD, depending on the dwFlags parameter.
 // As usual, lpSrc has been translated to a var parameter. But this does not work in
@@ -7740,7 +7760,7 @@ var
   CP: Word;
   CSI: TCharsetInfo;
 begin
-  if not JclCheckWinVersion(5, 0) then // Win2k required
+  if Win32MajorVersion < 5 then // Win2k required
   begin
     // these versions of Windows don't support TCI_SRCLOCALE
     CP := CodePageFromLocale(Language);
@@ -7760,16 +7780,22 @@ begin
   if not GetCharSetFromLocale(Language, Result) then
     RaiseLastOSError;
 end;
+{$ENDIF MSWINDOWS}
 
 function CodePageFromLocale(Language: LCID): Word;
 // determines the code page for a given locale
 var
   Buf: array [0..6] of Char;
 begin
+  {$IFNDEF FPCNONWINDOWS}
   GetLocaleInfo(Language, LOCALE_IDefaultAnsiCodePage, Buf, 6);
   Result := StrToIntDef(Buf, GetACP);
+  {$ELSE ~FPCNONWINDOWS}
+  Result := 0;
+  {$ENDIF ~FPCNONWINDOWS}
 end;
 
+{$IFDEF MSWINDOWS}
 function KeyboardCodePage: Word;
 begin
   Result := CodePageFromLocale(GetKeyboardLayout(0) and $FFFF);
@@ -7781,6 +7807,7 @@ function KeyUnicode(C: Char): WideChar;
 begin
   MultiByteToWideChar(KeyboardCodePage, MB_USEGLYPHCHARS, @C, 1, @Result, 1);
 end;
+{$ENDIF MSWINDOWS}
 
 function CodeBlockRange(const CB: TUnicodeBlock): TUnicodeBlockRange;
 // http://www.unicode.org/Public/5.0.0/ucd/Blocks.txt
@@ -7828,7 +7855,7 @@ begin
   end;
 end;
 
-
+{$IFDEF WINDOWS}
 function CompareTextWin95(const W1, W2: WideString; Locale: LCID): SizeInt;
 // special comparation function for Win9x since there's no system defined
 // comparation function, returns -1 if W1 < W2, 0 if W1 = W2 or 1 if W1 > W2
@@ -7856,6 +7883,13 @@ begin
   Result := CompareStringW(Locale, NORM_IGNORECASE, PWideChar(W1), Length(W1),
     PWideChar(W2), Length(W2)) - 2;
 end;
+{$ELSE WINDOWS}
+function CompareTextW(const W1, W2: WideString; Locale: LCID): SizeInt;
+begin
+  {$NOTE Locale ignored. Adapt when a fpc release has a codepage strings}
+  Result := widestringmanager.CompareTextWideStringProc(W1, W2);
+end;
+{$ENDIF WINDOWS}
 
 function StringToWideStringEx(const S: AnsiString; CodePage: Word): WideString;
 var
@@ -7958,13 +7992,21 @@ procedure PrepareUnicodeData;
 // Prepares structures which are globally needed.
 begin
   {$IFNDEF UNICODE_RTL_DATABASE}
+  {$IFNDEF FPCNONWINDOWS}
   LoadInProgress := TJclCriticalSection.Create;
+  {$ELSE FPCNONWINDOWS}
+  LoadInProgress := TCriticalSection.Create;
+  {$ENDIF FPCNONWINDOWS}
   {$ENDIF ~UNICODE_RTL_DATABASE}
 
+  {$IFDEF WINDOWS}
   if (Win32Platform and VER_PLATFORM_WIN32_NT) <> 0 then
     @WideCompareText := @CompareTextWinNT
   else
     @WideCompareText := @CompareTextWin95;
+  {$ELSE WINDOWS}
+  @WideCompareText := @CompareTextW;
+  {$ENDIF WINDOWS}
 end;
 
 procedure FreeUnicodeData;

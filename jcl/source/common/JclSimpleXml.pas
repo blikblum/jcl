@@ -65,7 +65,14 @@ uses
   {$ENDIF MSWINDOWS}
   SysUtils, Classes,
   Variants,
+  {$IFNDEF FPC}
   IniFiles,
+  {$ELSE}
+  FpStringHash,
+  {$ENDIF FPC}
+  {$IFDEF FPCNONWINDOWS}
+  FpWinAPICompatibility,
+  {$ENDIF FPCNONWINDOWS}
   Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
   JclBase, JclStreams;

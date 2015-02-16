@@ -62,11 +62,10 @@ uses
   {$ENDIF MSWINDOWS}
   Classes, SysUtils, Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
-  JclBase, JclFileUtils, JclPeImage,
+  JclBase, JclFileUtils, JclPeImage, JclSynch
   {$IFDEF BORLAND}
-  JclTD32,
-  {$ENDIF BORLAND}
-  JclSynch;
+  ,JclTD32
+  {$ENDIF BORLAND};
 
 // Diagnostics
 procedure AssertKindOf(const ClassName: string; const Obj: TObject); overload;
