@@ -17,7 +17,7 @@ uses
   JclLinkedLists, JclQueues, JclSortedMaps, JclStacks, JclStrHashMap, 
   JclTrees, JclVectors, FpStringHash, JclStringConversions, 
   FpWinAPICompatibility, FpLibcCompatibility, JclSimpleXml, JclUnicode, 
-  kerneldefs, kernelioctl, libclite;
+  libclite;
 
 implementation
 
