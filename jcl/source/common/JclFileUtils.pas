@@ -3843,7 +3843,11 @@ var
 begin
   P := tempnam(PChar(PathGetTempPath), PChar(Prefix));
   Result := P;
+  {$IFNDEF FPC}
+  Libc.free(P);
+  {$ELSE}
   libclite.free(P);
+  {$ENDIF ~FPC}
 end;
 {$ENDIF UNIX}
 
