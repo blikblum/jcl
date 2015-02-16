@@ -72,20 +72,21 @@ uses
   {$IFDEF HAS_UNIT_LIBC}
   {$IFNDEF FPC}
   Libc,
-  {$ELSE}
+  {$ELSE FPC}
   libclite,
   {$ENDIF ~FPC}
-  {$ENDIF HAS_UNIT_LIBC}
-  {$IFDEF FPC}
-  types,
+  {$ELSE ~HAS_UNIT_LIBC}
   {$IFDEF UNIX}
   BaseUnix,
   dateutils,
   {$IFNDEF LINUX}
   Unix,
   {$ENDIF ~LINUX}
-  {$ENDIF FPC}
-  {$ENDIF}
+  {$ENDIF ~UNIX}
+  {$ENDIF HAS_UNIT_LIBC}
+  {$IFDEF FPC}
+  types,
+  {$ENDIF ~FPC}
   JclBase, JclResources;
 
 const
@@ -685,7 +686,7 @@ end;
 {$ENDIF MSWINDOWS}
 
 {$IFDEF UNIX}
-{$IFNDEF FPC}
+{$IFDEF HAS_UNIT_LIBC}
 function DateTimeToLocalDateTime(DateTime: TDateTime): TDateTime;
 var
   {$IFDEF LINUX}
@@ -704,12 +705,12 @@ begin
   {$ENDIF ~LINUX}
   Result  := ((DateTime * SecsPerDay) - Offset) / SecsPerDay;
 end;
-{$ELSE FPC}
+{$ELSE HAS_UNIT_LIBC}
 function DateTimeToLocalDateTime(DateTime: TDateTime): TDateTime;
 begin
   Result := UniversalTimeToLocal(DateTime);
 end;
-{$ENDIF FPC}
+{$ENDIF HAS_UNIT_LIBC}
 {$ENDIF UNIX}
 
 {$IFDEF MSWINDOWS}
@@ -730,7 +731,7 @@ end;
 {$ENDIF MSWINDOWS}
 
 {$IFDEF UNIX}
-{$IFNDEF FPC}
+{$IFDEF HAS_UNIT_LIBC}
 function LocalDateTimeToDateTime(DateTime: TDateTime): TDateTime;
 var
   {$IFDEF LINUX}
@@ -749,12 +750,12 @@ begin
   {$ENDIF ~LINUX}
   Result  := ((DateTime * SecsPerDay) + Offset) / SecsPerDay;
 end;
-{$ELSE FPC}
+{$ELSE HAS_UNIT_LIBC}
 function LocalDateTimeToDateTime(DateTime: TDateTime): TDateTime;
 begin
   Result := LocalTimeToUniversal(DateTime);
 end;
-{$ENDIF FPC}
+{$ENDIF HAS_UNIT_LIBC}
 {$ENDIF UNIX}
 
 function HoursToMSecs(Hours: Integer): Integer;

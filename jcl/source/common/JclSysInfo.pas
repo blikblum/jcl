@@ -71,7 +71,11 @@ uses
   JclUnitVersioning,
   {$ENDIF UNITVERSIONING}
   {$IFDEF HAS_UNIT_LIBC}
+  {$IFNDEF FPC}
   Libc,
+  {$ELSE}
+  libclite,
+  {$ENDIF ~FPC}
   {$ENDIF HAS_UNIT_LIBC}
   {$IFDEF HAS_UNITSCOPE}
   {$IFDEF MSWINDOWS}
@@ -84,9 +88,6 @@ uses
   {$ENDIF MSWINDOWS}
   Classes,
   {$ENDIF ~HAS_UNITSCOPE}
-  {$IFDEF FPCNONWINDOWS}
-  BaseUnix,
-  {$ENDIF}
   JclBase, JclResources;
 
 // Environment Variables
@@ -1612,11 +1613,7 @@ end;
 
 function GetEnvironmentVar(const Name: string; out Value: string): Boolean;
 begin
-  {$IFNDEF FPC}
   Value := getenv(PChar(Name));
-  {$ELSE ~FPC}
-  Value := GetEnvironmentVariable(Name);
-  {$ENDIF FPC}
   Result := Value <> '';
 end;
 
@@ -2331,7 +2328,11 @@ begin
       if_freenameindex(ListSave);
     end;
   finally
+    {$IFNDEF FPC}
     Libc.__close(Sock)
+    {$ELSE}
+    libclite.__close(Sock)
+    {$ENDIF ~FPC}
   end;
 end;
 {$ELSE ~HAS_UNIT_LIBC}
@@ -2349,11 +2350,7 @@ function GetLocalComputerName: string;
 var
   MachineInfo: utsname;
 begin
-  {$IFNDEF FPC}
   uname(MachineInfo);
-  {$ELSE}
-  FpUname(MachineInfo);
-  {$ENDIF}
   Result := MachineInfo.nodename;
 end;
 {$ENDIF LINUX}
@@ -2451,18 +2448,8 @@ function GetDomainName: string;
 var
   MachineInfo: utsname;
 begin
-  {$IFNDEF FPC}
   uname(MachineInfo);
-  {$ELSE ~FPC}
-  FpUname(MachineInfo);
-  {$ENDIF ~FPC}
-  {$IFNDEF FPC}
   Result := MachineInfo.domainname;
-  {$ELSE ~FPC}
-  Result := MachineInfo.Domain;
-  {$ENDIF ~FPC}
-end;
-
 end;
 {$ENDIF UNIX}
 {$IFDEF MSWINDOWS}
@@ -2679,13 +2666,12 @@ begin
   end;
 end;
 {$ELSE HAS_UNIT_LIBC}
-{$ENDIF HAS_UNIT_LIBC}
 function RunningProcessesList(const List: TStrings; FullPath: Boolean): Boolean;
 begin
   Result := False;
   {$NOTE RunningProcessesList not implemented}
 end;
-
+{$ENDIF HAS_UNIT_LIBC}
 {$ENDIF UNIX}
 
 {$IFDEF MSWINDOWS}

@@ -657,9 +657,6 @@ uses
   {$IFNDEF FPC}
   JclSynch,
   {$ENDIF ~FPC}
-  {$IFDEF FPCNONWINDOWS}
-  FpLibcCompatibility,
-  {$ENDIF ~FPCNONWINDOWS}
   JclSysUtils;
 
 //=== Internal ===============================================================

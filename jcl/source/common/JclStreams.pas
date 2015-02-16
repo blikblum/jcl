@@ -608,15 +608,10 @@ uses
   JclResources,
   JclCharsets,
   JclMath,
-  JclSysUtils;
-
-{$IFDEF FPC}
-{$IFNDEF WINDOWS}
-const
-  CP_ACP = 0;
-  CP_UTF8 = 65001;
-{$ENDIF ~WINDOWS}
-{$ENDIF ~FPC}
+  JclSysUtils
+  {$IFDEF FPCNONWINDOWS}
+  ,FpWinAPICompatibility
+  {$ENDIF};
 
 
 function StreamCopy(Source: TStream; Dest: TStream; BufferSize: Longint): Int64;

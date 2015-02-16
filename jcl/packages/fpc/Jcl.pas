@@ -16,8 +16,7 @@ uses
   JclArraySets, JclBinaryTrees, JclContainerIntf, JclHashMaps, JclHashSets, 
   JclLinkedLists, JclQueues, JclSortedMaps, JclStacks, JclStrHashMap, 
   JclTrees, JclVectors, FpStringHash, JclStringConversions, 
-  FpWinAPICompatibility, FpLibcCompatibility, JclSimpleXml, JclUnicode, 
-  libclite;
+  FpWinAPICompatibility, JclSimpleXml, JclUnicode, libclite, JclSysInfo;
 
 implementation
 
