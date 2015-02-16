@@ -1,7 +1,7 @@
 object ExprEvalForm: TExprEvalForm
-  Left = 222
+  Left = 221
   Height = 321
-  Top = 107
+  Top = 81
   Width = 479
   Caption = 'JclExprEval Example'
   ClientHeight = 321
@@ -13,35 +13,35 @@ object ExprEvalForm: TExprEvalForm
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poScreenCenter
-  LCLVersion = '1.3'
+  LCLVersion = '1.5'
   object Label1: TLabel
     Left = 8
-    Height = 13
+    Height = 14
     Top = 37
-    Width = 54
+    Width = 66
     Caption = 'E&xpression:'
     FocusControl = ExpressionInput
     ParentColor = False
   end
   object Label2: TLabel
     Left = 8
-    Height = 13
+    Height = 14
     Top = 64
-    Width = 49
+    Width = 56
     Caption = 'Functions:'
     ParentColor = False
   end
   object Label3: TLabel
     Left = 8
-    Height = 13
+    Height = 14
     Top = 11
-    Width = 46
+    Width = 56
     Caption = 'Variables:'
     ParentColor = False
   end
   object ExpressionInput: TEdit
     Left = 80
-    Height = 21
+    Height = 24
     Top = 34
     Width = 305
     Anchors = [akTop, akLeft, akRight]
@@ -68,10 +68,10 @@ object ExprEvalForm: TExprEvalForm
   end
   object FuncList: TComboBox
     Left = 80
-    Height = 21
-    Top = 61
+    Height = 28
+    Top = 60
     Width = 145
-    ItemHeight = 13
+    ItemHeight = 0
     OnChange = FuncListChange
     Sorted = True
     Style = csDropDownList
@@ -79,7 +79,7 @@ object ExprEvalForm: TExprEvalForm
   end
   object ValueEdit: TEdit
     Left = 271
-    Height = 21
+    Height = 24
     Top = 8
     Width = 114
     OnChange = ValueEditChange
@@ -88,10 +88,10 @@ object ExprEvalForm: TExprEvalForm
   end
   object VarComboBox: TComboBox
     Left = 80
-    Height = 21
+    Height = 25
     Top = 8
     Width = 145
-    ItemHeight = 13
+    ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
       'x'

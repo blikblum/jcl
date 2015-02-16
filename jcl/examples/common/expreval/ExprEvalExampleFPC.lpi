@@ -18,7 +18,6 @@
       <XPManifest>
         <DpiAware Value="True"/>
       </XPManifest>
-      <Icon Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -49,7 +48,6 @@
       <Unit0>
         <Filename Value="ExprEvalExampleFPC.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ExprEvalExampleFPC"/>
       </Unit0>
       <Unit1>
         <Filename Value="ExprEvalExampleMain.pas"/>
