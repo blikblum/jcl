@@ -3,6 +3,7 @@
   <Package Version="4">
     <Name Value="JclWin"/>
     <Type Value="RunAndDesignTime"/>
+    <Author Value="Project JEDI"/>
     <CompilerOptions>
       <Version Value="11"/>
       <SearchPaths>
@@ -10,6 +11,9 @@
         <UnitOutputDirectory Value="../../lib/fpc/$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
     </CompilerOptions>
+    <Description Value="JEDI Code Library Win32 RTL package"/>
+    <License Value="Copyright (C) 1999, 2014 Project JEDI"/>
+    <Version Major="2" Minor="7" Build="5300"/>
     <Files Count="44">
       <Item1>
         <Filename Value="../../source/common/JclSynch.pas"/>
