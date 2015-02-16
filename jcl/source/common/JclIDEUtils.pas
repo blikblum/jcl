@@ -75,6 +75,9 @@ uses
   {$ENDIF MSWINDOWS}
   Classes, SysUtils, IniFiles, Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
+  {$IFDEF FPC}
+  JclWin32Process,
+  {$ENDIF ~FPC}
   JclBase, JclSysUtils, JclCompilerUtils;
 
 // Various definitions
