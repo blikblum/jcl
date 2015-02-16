@@ -10,7 +10,7 @@
       <SearchPaths>
         <IncludeFiles Value="..\..\source\include"/>
         <OtherUnitFiles Value="..\..\source\vcl"/>
-        <UnitOutputDirectory Value="..\..\lib\fpc\vcl\$(TargetCPU)-$(TargetOS)"/>
+        <UnitOutputDirectory Value="..\..\lib\fpc\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <Parsing>
         <Style Value="1"/>
@@ -67,10 +67,10 @@
     </Files>
     <RequiredPkgs Count="2">
       <Item1>
-        <PackageName Value="LCL"/>
+        <PackageName Value="JclWin"/>
       </Item1>
       <Item2>
-        <PackageName Value="Jcl"/>
+        <PackageName Value="LCL"/>
       </Item2>
     </RequiredPkgs>
     <UsageOptions>
