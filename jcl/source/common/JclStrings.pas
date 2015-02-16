@@ -485,7 +485,7 @@ type
     procedure Clear;
 
     { IToString }
-    function ToString: string; {$IFDEF RTL200_UP} override; {$ENDIF RTL200_UP}
+    function ToString: string; {$IFDEF HAS_TOSTRING} override; {$ENDIF HAS_TOSTRING}
 
     property __Chars__[Index: SizeInt]: Char read GetChars write SetChars; default;
     property Chars: TCharDynArray read FChars;
@@ -552,7 +552,7 @@ type
     function UpdatePosition(const S: string; var Column, Line: SizeInt): SizeInt; overload;
 
     { IToString }
-    function ToString: string; overload; {$IFDEF RTL200_UP} override; {$ENDIF RTL200_UP}
+    function ToString: string; overload; {$IFDEF HAS_TOSTRING} override; {$ENDIF HAS_TOSTRING}
     // Conversions
     function ToString(FormattingOptions: SizeInt): string; {$IFDEF RTL200_UP} reintroduce; {$ENDIF RTL200_UP} overload;
     class function FromString(const S: string): TJclTabSet; {$IFDEF SUPPORTS_STATIC} static; {$ENDIF SUPPORTS_STATIC}
