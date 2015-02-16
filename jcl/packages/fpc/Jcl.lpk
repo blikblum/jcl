@@ -30,7 +30,7 @@
     <Description Value="JEDI Code Library RTL package"/>
     <License Value="Copyright (C) 1999, 2014 Project JEDI"/>
     <Version Major="2" Minor="7" Build="5300"/>
-    <Files Count="303">
+    <Files Count="295">
       <Item1>
         <Filename Value="..\..\source\common\bzip2.pas"/>
         <UnitName Value="bzip2"/>
@@ -540,709 +540,677 @@
         <Type Value="Include"/>
       </Item127>
       <Item128>
-        <Filename Value="..\..\source\fpc\libclite\kerneldefs.o"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\kioctlsh.inc"/>
+        <Type Value="Include"/>
       </Item128>
       <Item129>
-        <Filename Value="..\..\source\fpc\libclite\kerneldefs.pp"/>
-        <UnitName Value="kerneldefs"/>
+        <Filename Value="..\..\source\fpc\libclite\langinfoh.inc"/>
+        <Type Value="Include"/>
       </Item129>
       <Item130>
-        <Filename Value="..\..\source\fpc\libclite\kerneldefs.ppu"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\libclite.pp"/>
+        <UnitName Value="libclite"/>
       </Item130>
       <Item131>
-        <Filename Value="..\..\source\fpc\libclite\kernelioctl.o"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\libgenh.inc"/>
+        <Type Value="Include"/>
       </Item131>
       <Item132>
-        <Filename Value="..\..\source\fpc\libclite\kernelioctl.pp"/>
-        <UnitName Value="kernelioctl"/>
+        <Filename Value="..\..\source\fpc\libclite\libintlh.inc"/>
+        <Type Value="Include"/>
       </Item132>
       <Item133>
-        <Filename Value="..\..\source\fpc\libclite\kernelioctl.ppu"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\libio.inc"/>
+        <Type Value="Include"/>
       </Item133>
       <Item134>
-        <Filename Value="..\..\source\fpc\libclite\kioctlsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\libioh.inc"/>
         <Type Value="Include"/>
       </Item134>
       <Item135>
-        <Filename Value="..\..\source\fpc\libclite\langinfoh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\lib_namesh.inc"/>
         <Type Value="Include"/>
       </Item135>
       <Item136>
-        <Filename Value="..\..\source\fpc\libclite\libclite.o"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\limitsh.inc"/>
+        <Type Value="Include"/>
       </Item136>
       <Item137>
-        <Filename Value="..\..\source\fpc\libclite\libclite.pp"/>
-        <UnitName Value="libclite"/>
+        <Filename Value="..\..\source\fpc\libclite\localeh.inc"/>
+        <Type Value="Include"/>
       </Item137>
       <Item138>
-        <Filename Value="..\..\source\fpc\libclite\libclite.ppu"/>
-        <Type Value="Binary"/>
+        <Filename Value="..\..\source\fpc\libclite\local_limh.inc"/>
+        <Type Value="Include"/>
       </Item138>
       <Item139>
-        <Filename Value="..\..\source\fpc\libclite\libgenh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\malloch.inc"/>
         <Type Value="Include"/>
       </Item139>
       <Item140>
-        <Filename Value="..\..\source\fpc\libclite\libintlh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\mcheckh.inc"/>
         <Type Value="Include"/>
       </Item140>
       <Item141>
-        <Filename Value="..\..\source\fpc\libclite\libio.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\mntenth.inc"/>
         <Type Value="Include"/>
       </Item141>
       <Item142>
-        <Filename Value="..\..\source\fpc\libclite\libioh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\monetaryh.inc"/>
         <Type Value="Include"/>
       </Item142>
       <Item143>
-        <Filename Value="..\..\source\fpc\libclite\lib_namesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nashh.inc"/>
         <Type Value="Include"/>
       </Item143>
       <Item144>
-        <Filename Value="..\..\source\fpc\libclite\limitsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nath.inc"/>
         <Type Value="Include"/>
       </Item144>
       <Item145>
-        <Filename Value="..\..\source\fpc\libclite\localeh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nax25h.inc"/>
         <Type Value="Include"/>
       </Item145>
       <Item146>
-        <Filename Value="..\..\source\fpc\libclite\local_limh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nech.inc"/>
         <Type Value="Include"/>
       </Item146>
       <Item147>
-        <Filename Value="..\..\source\fpc\libclite\malloch.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\netdbh.inc"/>
         <Type Value="Include"/>
       </Item147>
       <Item148>
-        <Filename Value="..\..\source\fpc\libclite\mcheckh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\netherh.inc"/>
         <Type Value="Include"/>
       </Item148>
       <Item149>
-        <Filename Value="..\..\source\fpc\libclite\mntenth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nethernet.inc"/>
         <Type Value="Include"/>
       </Item149>
       <Item150>
-        <Filename Value="..\..\source\fpc\libclite\monetaryh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\netherneth.inc"/>
         <Type Value="Include"/>
       </Item150>
       <Item151>
-        <Filename Value="..\..\source\fpc\libclite\nashh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nicmp6.inc"/>
         <Type Value="Include"/>
       </Item151>
       <Item152>
-        <Filename Value="..\..\source\fpc\libclite\nath.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nicmp6h.inc"/>
         <Type Value="Include"/>
       </Item152>
       <Item153>
-        <Filename Value="..\..\source\fpc\libclite\nax25h.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_arph.inc"/>
         <Type Value="Include"/>
       </Item153>
       <Item154>
-        <Filename Value="..\..\source\fpc\libclite\nech.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_ether.inc"/>
         <Type Value="Include"/>
       </Item154>
       <Item155>
-        <Filename Value="..\..\source\fpc\libclite\netdbh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_etherh.inc"/>
         <Type Value="Include"/>
       </Item155>
       <Item156>
-        <Filename Value="..\..\source\fpc\libclite\netherh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_fddih.inc"/>
         <Type Value="Include"/>
       </Item156>
       <Item157>
-        <Filename Value="..\..\source\fpc\libclite\nethernet.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nifh.inc"/>
         <Type Value="Include"/>
       </Item157>
       <Item158>
-        <Filename Value="..\..\source\fpc\libclite\netherneth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_packeth.inc"/>
         <Type Value="Include"/>
       </Item158>
       <Item159>
-        <Filename Value="..\..\source\fpc\libclite\nicmp6.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_ppp.inc"/>
         <Type Value="Include"/>
       </Item159>
       <Item160>
-        <Filename Value="..\..\source\fpc\libclite\nicmp6h.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_ppph.inc"/>
         <Type Value="Include"/>
       </Item160>
       <Item161>
-        <Filename Value="..\..\source\fpc\libclite\nif_arph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_shaperh.inc"/>
         <Type Value="Include"/>
       </Item161>
       <Item162>
-        <Filename Value="..\..\source\fpc\libclite\nif_ether.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nif_trh.inc"/>
         <Type Value="Include"/>
       </Item162>
       <Item163>
-        <Filename Value="..\..\source\fpc\libclite\nif_etherh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nigmph.inc"/>
         <Type Value="Include"/>
       </Item163>
       <Item164>
-        <Filename Value="..\..\source\fpc\libclite\nif_fddih.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nin.inc"/>
         <Type Value="Include"/>
       </Item164>
       <Item165>
-        <Filename Value="..\..\source\fpc\libclite\nifh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ninh.inc"/>
         <Type Value="Include"/>
       </Item165>
       <Item166>
-        <Filename Value="..\..\source\fpc\libclite\nif_packeth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nin_systmh.inc"/>
         <Type Value="Include"/>
       </Item166>
       <Item167>
-        <Filename Value="..\..\source\fpc\libclite\nif_ppp.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nip.inc"/>
         <Type Value="Include"/>
       </Item167>
       <Item168>
-        <Filename Value="..\..\source\fpc\libclite\nif_ppph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nip6h.inc"/>
         <Type Value="Include"/>
       </Item168>
       <Item169>
-        <Filename Value="..\..\source\fpc\libclite\nif_shaperh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\niph.inc"/>
         <Type Value="Include"/>
       </Item169>
       <Item170>
-        <Filename Value="..\..\source\fpc\libclite\nif_trh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nip_icmp.inc"/>
         <Type Value="Include"/>
       </Item170>
       <Item171>
-        <Filename Value="..\..\source\fpc\libclite\nigmph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nip_icmph.inc"/>
         <Type Value="Include"/>
       </Item171>
       <Item172>
-        <Filename Value="..\..\source\fpc\libclite\nin.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nipxh.inc"/>
         <Type Value="Include"/>
       </Item172>
       <Item173>
-        <Filename Value="..\..\source\fpc\libclite\ninh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nl_typesh.inc"/>
         <Type Value="Include"/>
       </Item173>
       <Item174>
-        <Filename Value="..\..\source\fpc\libclite\nin_systmh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nnetromh.inc"/>
         <Type Value="Include"/>
       </Item174>
       <Item175>
-        <Filename Value="..\..\source\fpc\libclite\nip.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\npacketh.inc"/>
         <Type Value="Include"/>
       </Item175>
       <Item176>
-        <Filename Value="..\..\source\fpc\libclite\nip6h.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nroseh.inc"/>
         <Type Value="Include"/>
       </Item176>
       <Item177>
-        <Filename Value="..\..\source\fpc\libclite\niph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nroute.inc"/>
         <Type Value="Include"/>
       </Item177>
       <Item178>
-        <Filename Value="..\..\source\fpc\libclite\nip_icmp.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nrouteh.inc"/>
         <Type Value="Include"/>
       </Item178>
       <Item179>
-        <Filename Value="..\..\source\fpc\libclite\nip_icmph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nssh.inc"/>
         <Type Value="Include"/>
       </Item179>
       <Item180>
-        <Filename Value="..\..\source\fpc\libclite\nipxh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ntcph.inc"/>
         <Type Value="Include"/>
       </Item180>
       <Item181>
-        <Filename Value="..\..\source\fpc\libclite\nl_typesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nudph.inc"/>
         <Type Value="Include"/>
       </Item181>
       <Item182>
-        <Filename Value="..\..\source\fpc\libclite\nnetromh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\nupdh.inc"/>
         <Type Value="Include"/>
       </Item182>
       <Item183>
-        <Filename Value="..\..\source\fpc\libclite\npacketh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\pathsh.inc"/>
         <Type Value="Include"/>
       </Item183>
       <Item184>
-        <Filename Value="..\..\source\fpc\libclite\nroseh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\posix1_limh.inc"/>
         <Type Value="Include"/>
       </Item184>
       <Item185>
-        <Filename Value="..\..\source\fpc\libclite\nroute.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\posix2_limh.inc"/>
         <Type Value="Include"/>
       </Item185>
       <Item186>
-        <Filename Value="..\..\source\fpc\libclite\nrouteh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\posixopth.inc"/>
         <Type Value="Include"/>
       </Item186>
       <Item187>
-        <Filename Value="..\..\source\fpc\libclite\nssh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\printfh.inc"/>
         <Type Value="Include"/>
       </Item187>
       <Item188>
-        <Filename Value="..\..\source\fpc\libclite\ntcph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\proutedh.inc"/>
         <Type Value="Include"/>
       </Item188>
       <Item189>
-        <Filename Value="..\..\source\fpc\libclite\nudph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\prwhodh.inc"/>
         <Type Value="Include"/>
       </Item189>
       <Item190>
-        <Filename Value="..\..\source\fpc\libclite\nupdh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ptalkdh.inc"/>
         <Type Value="Include"/>
       </Item190>
       <Item191>
-        <Filename Value="..\..\source\fpc\libclite\pathsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\pthread.inc"/>
         <Type Value="Include"/>
       </Item191>
       <Item192>
-        <Filename Value="..\..\source\fpc\libclite\posix1_limh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\pthreadh.inc"/>
         <Type Value="Include"/>
       </Item192>
       <Item193>
-        <Filename Value="..\..\source\fpc\libclite\posix2_limh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\pthreadtypesh.inc"/>
         <Type Value="Include"/>
       </Item193>
       <Item194>
-        <Filename Value="..\..\source\fpc\libclite\posixopth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ptimedh.inc"/>
         <Type Value="Include"/>
       </Item194>
       <Item195>
-        <Filename Value="..\..\source\fpc\libclite\printfh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ptyh.inc"/>
         <Type Value="Include"/>
       </Item195>
       <Item196>
-        <Filename Value="..\..\source\fpc\libclite\proutedh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\pwdh.inc"/>
         <Type Value="Include"/>
       </Item196>
       <Item197>
-        <Filename Value="..\..\source\fpc\libclite\prwhodh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\regexh.inc"/>
         <Type Value="Include"/>
       </Item197>
       <Item198>
-        <Filename Value="..\..\source\fpc\libclite\ptalkdh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\regexph.inc"/>
         <Type Value="Include"/>
       </Item198>
       <Item199>
-        <Filename Value="..\..\source\fpc\libclite\pthread.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\saccth.inc"/>
         <Type Value="Include"/>
       </Item199>
       <Item200>
-        <Filename Value="..\..\source\fpc\libclite\pthreadh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\schedh.inc"/>
         <Type Value="Include"/>
       </Item200>
       <Item201>
-        <Filename Value="..\..\source\fpc\libclite\pthreadtypesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\searchh.inc"/>
         <Type Value="Include"/>
       </Item201>
       <Item202>
-        <Filename Value="..\..\source\fpc\libclite\ptimedh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\semaphoreh.inc"/>
         <Type Value="Include"/>
       </Item202>
       <Item203>
-        <Filename Value="..\..\source\fpc\libclite\ptyh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sfsuidh.inc"/>
         <Type Value="Include"/>
       </Item203>
       <Item204>
-        <Filename Value="..\..\source\fpc\libclite\pwdh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sgttyh.inc"/>
         <Type Value="Include"/>
       </Item204>
       <Item205>
-        <Filename Value="..\..\source\fpc\libclite\regexh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\shadowh.inc"/>
         <Type Value="Include"/>
       </Item205>
       <Item206>
-        <Filename Value="..\..\source\fpc\libclite\regexph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sigactionh.inc"/>
         <Type Value="Include"/>
       </Item206>
       <Item207>
-        <Filename Value="..\..\source\fpc\libclite\saccth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sigcontexth.inc"/>
         <Type Value="Include"/>
       </Item207>
       <Item208>
-        <Filename Value="..\..\source\fpc\libclite\schedh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\siginfoh.inc"/>
         <Type Value="Include"/>
       </Item208>
       <Item209>
-        <Filename Value="..\..\source\fpc\libclite\searchh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\signalh.inc"/>
         <Type Value="Include"/>
       </Item209>
       <Item210>
-        <Filename Value="..\..\source\fpc\libclite\semaphoreh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\signumh.inc"/>
         <Type Value="Include"/>
       </Item210>
       <Item211>
-        <Filename Value="..\..\source\fpc\libclite\sfsuidh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sigseth.inc"/>
         <Type Value="Include"/>
       </Item211>
       <Item212>
-        <Filename Value="..\..\source\fpc\libclite\sgttyh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sigstackh.inc"/>
         <Type Value="Include"/>
       </Item212>
       <Item213>
-        <Filename Value="..\..\source\fpc\libclite\shadowh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sigthreadh.inc"/>
         <Type Value="Include"/>
       </Item213>
       <Item214>
-        <Filename Value="..\..\source\fpc\libclite\sigactionh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sioctlh.inc"/>
         <Type Value="Include"/>
       </Item214>
       <Item215>
-        <Filename Value="..\..\source\fpc\libclite\sigcontexth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sipch.inc"/>
         <Type Value="Include"/>
       </Item215>
       <Item216>
-        <Filename Value="..\..\source\fpc\libclite\siginfoh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\skdaemonh.inc"/>
         <Type Value="Include"/>
       </Item216>
       <Item217>
-        <Filename Value="..\..\source\fpc\libclite\signalh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sklogh.inc"/>
         <Type Value="Include"/>
       </Item217>
       <Item218>
-        <Filename Value="..\..\source\fpc\libclite\signumh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\smmaph.inc"/>
         <Type Value="Include"/>
       </Item218>
       <Item219>
-        <Filename Value="..\..\source\fpc\libclite\sigseth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\smounth.inc"/>
         <Type Value="Include"/>
       </Item219>
       <Item220>
-        <Filename Value="..\..\source\fpc\libclite\sigstackh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\smsgh.inc"/>
         <Type Value="Include"/>
       </Item220>
       <Item221>
-        <Filename Value="..\..\source\fpc\libclite\sigthreadh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\spawnh.inc"/>
         <Type Value="Include"/>
       </Item221>
       <Item222>
-        <Filename Value="..\..\source\fpc\libclite\sioctlh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\spermh.inc"/>
         <Type Value="Include"/>
       </Item222>
       <Item223>
-        <Filename Value="..\..\source\fpc\libclite\sipch.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\spollh.inc"/>
         <Type Value="Include"/>
       </Item223>
       <Item224>
-        <Filename Value="..\..\source\fpc\libclite\skdaemonh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sptraceh.inc"/>
         <Type Value="Include"/>
       </Item224>
       <Item225>
-        <Filename Value="..\..\source\fpc\libclite\sklogh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\squota.inc"/>
         <Type Value="Include"/>
       </Item225>
       <Item226>
-        <Filename Value="..\..\source\fpc\libclite\smmaph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\squotah.inc"/>
         <Type Value="Include"/>
       </Item226>
       <Item227>
-        <Filename Value="..\..\source\fpc\libclite\smounth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sraw.inc"/>
         <Type Value="Include"/>
       </Item227>
       <Item228>
-        <Filename Value="..\..\source\fpc\libclite\smsgh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\srawh.inc"/>
         <Type Value="Include"/>
       </Item228>
       <Item229>
-        <Filename Value="..\..\source\fpc\libclite\spawnh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\srebooth.inc"/>
         <Type Value="Include"/>
       </Item229>
       <Item230>
-        <Filename Value="..\..\source\fpc\libclite\spermh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sresourceh.inc"/>
         <Type Value="Include"/>
       </Item230>
       <Item231>
-        <Filename Value="..\..\source\fpc\libclite\spollh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sscsih.inc"/>
         <Type Value="Include"/>
       </Item231>
       <Item232>
-        <Filename Value="..\..\source\fpc\libclite\sptraceh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sscsi_ioctlh.inc"/>
         <Type Value="Include"/>
       </Item232>
       <Item233>
-        <Filename Value="..\..\source\fpc\libclite\squota.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sselect.inc"/>
         <Type Value="Include"/>
       </Item233>
       <Item234>
-        <Filename Value="..\..\source\fpc\libclite\squotah.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sselecth.inc"/>
         <Type Value="Include"/>
       </Item234>
       <Item235>
-        <Filename Value="..\..\source\fpc\libclite\sraw.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssemh.inc"/>
         <Type Value="Include"/>
       </Item235>
       <Item236>
-        <Filename Value="..\..\source\fpc\libclite\srawh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssendfileh.inc"/>
         <Type Value="Include"/>
       </Item236>
       <Item237>
-        <Filename Value="..\..\source\fpc\libclite\srebooth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssgh.inc"/>
         <Type Value="Include"/>
       </Item237>
       <Item238>
-        <Filename Value="..\..\source\fpc\libclite\sresourceh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sshmh.inc"/>
         <Type Value="Include"/>
       </Item238>
       <Item239>
-        <Filename Value="..\..\source\fpc\libclite\sscsih.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssocketh.inc"/>
         <Type Value="Include"/>
       </Item239>
       <Item240>
-        <Filename Value="..\..\source\fpc\libclite\sscsi_ioctlh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sstat.inc"/>
         <Type Value="Include"/>
       </Item240>
       <Item241>
-        <Filename Value="..\..\source\fpc\libclite\sselect.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sstatfsh.inc"/>
         <Type Value="Include"/>
       </Item241>
       <Item242>
-        <Filename Value="..\..\source\fpc\libclite\sselecth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sstath.inc"/>
         <Type Value="Include"/>
       </Item242>
       <Item243>
-        <Filename Value="..\..\source\fpc\libclite\ssemh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sstatvfsh.inc"/>
         <Type Value="Include"/>
       </Item243>
       <Item244>
-        <Filename Value="..\..\source\fpc\libclite\ssendfileh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sswaph.inc"/>
         <Type Value="Include"/>
       </Item244>
       <Item245>
-        <Filename Value="..\..\source\fpc\libclite\ssgh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssysctlh.inc"/>
         <Type Value="Include"/>
       </Item245>
       <Item246>
-        <Filename Value="..\..\source\fpc\libclite\sshmh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssysinfoh.inc"/>
         <Type Value="Include"/>
       </Item246>
       <Item247>
-        <Filename Value="..\..\source\fpc\libclite\ssocketh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssyslog.inc"/>
         <Type Value="Include"/>
       </Item247>
       <Item248>
-        <Filename Value="..\..\source\fpc\libclite\sstat.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ssyslogh.inc"/>
         <Type Value="Include"/>
       </Item248>
       <Item249>
-        <Filename Value="..\..\source\fpc\libclite\sstatfsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdinth.inc"/>
         <Type Value="Include"/>
       </Item249>
       <Item250>
-        <Filename Value="..\..\source\fpc\libclite\sstath.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdio_exth.inc"/>
         <Type Value="Include"/>
       </Item250>
       <Item251>
-        <Filename Value="..\..\source\fpc\libclite\sstatvfsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdioh.inc"/>
         <Type Value="Include"/>
       </Item251>
       <Item252>
-        <Filename Value="..\..\source\fpc\libclite\sswaph.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdio_limh.inc"/>
         <Type Value="Include"/>
       </Item252>
       <Item253>
-        <Filename Value="..\..\source\fpc\libclite\ssysctlh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdlib.inc"/>
         <Type Value="Include"/>
       </Item253>
       <Item254>
-        <Filename Value="..\..\source\fpc\libclite\ssysinfoh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stdlibh.inc"/>
         <Type Value="Include"/>
       </Item254>
       <Item255>
-        <Filename Value="..\..\source\fpc\libclite\ssyslog.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stime.inc"/>
         <Type Value="Include"/>
       </Item255>
       <Item256>
-        <Filename Value="..\..\source\fpc\libclite\ssyslogh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stimebh.inc"/>
         <Type Value="Include"/>
       </Item256>
       <Item257>
-        <Filename Value="..\..\source\fpc\libclite\stdinth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stimeh.inc"/>
         <Type Value="Include"/>
       </Item257>
       <Item258>
-        <Filename Value="..\..\source\fpc\libclite\stdio_exth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stringh.inc"/>
         <Type Value="Include"/>
       </Item258>
       <Item259>
-        <Filename Value="..\..\source\fpc\libclite\stdioh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\stroptsh.inc"/>
         <Type Value="Include"/>
       </Item259>
       <Item260>
-        <Filename Value="..\..\source\fpc\libclite\stdio_limh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sttydefaults.inc"/>
         <Type Value="Include"/>
       </Item260>
       <Item261>
-        <Filename Value="..\..\source\fpc\libclite\stdlib.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sttydefaultsh.inc"/>
         <Type Value="Include"/>
       </Item261>
       <Item262>
-        <Filename Value="..\..\source\fpc\libclite\stdlibh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sucontexth.inc"/>
         <Type Value="Include"/>
       </Item262>
       <Item263>
-        <Filename Value="..\..\source\fpc\libclite\stime.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\suioh.inc"/>
         <Type Value="Include"/>
       </Item263>
       <Item264>
-        <Filename Value="..\..\source\fpc\libclite\stimebh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sun.inc"/>
         <Type Value="Include"/>
       </Item264>
       <Item265>
-        <Filename Value="..\..\source\fpc\libclite\stimeh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sunh.inc"/>
         <Type Value="Include"/>
       </Item265>
       <Item266>
-        <Filename Value="..\..\source\fpc\libclite\stringh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\suserh.inc"/>
         <Type Value="Include"/>
       </Item266>
       <Item267>
-        <Filename Value="..\..\source\fpc\libclite\stroptsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sustath.inc"/>
         <Type Value="Include"/>
       </Item267>
       <Item268>
-        <Filename Value="..\..\source\fpc\libclite\sttydefaults.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sutsnameh.inc"/>
         <Type Value="Include"/>
       </Item268>
       <Item269>
-        <Filename Value="..\..\source\fpc\libclite\sttydefaultsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\svlimith.inc"/>
         <Type Value="Include"/>
       </Item269>
       <Item270>
-        <Filename Value="..\..\source\fpc\libclite\sucontexth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\svtimesh.inc"/>
         <Type Value="Include"/>
       </Item270>
       <Item271>
-        <Filename Value="..\..\source\fpc\libclite\suioh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\swaith.inc"/>
         <Type Value="Include"/>
       </Item271>
       <Item272>
-        <Filename Value="..\..\source\fpc\libclite\sun.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\sysexitsh.inc"/>
         <Type Value="Include"/>
       </Item272>
       <Item273>
-        <Filename Value="..\..\source\fpc\libclite\sunh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\syslogh.inc"/>
         <Type Value="Include"/>
       </Item273>
       <Item274>
-        <Filename Value="..\..\source\fpc\libclite\suserh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\systypeshh.inc"/>
         <Type Value="Include"/>
       </Item274>
       <Item275>
-        <Filename Value="..\..\source\fpc\libclite\sustath.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\termios.inc"/>
         <Type Value="Include"/>
       </Item275>
       <Item276>
-        <Filename Value="..\..\source\fpc\libclite\sutsnameh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\termiosh.inc"/>
         <Type Value="Include"/>
       </Item276>
       <Item277>
-        <Filename Value="..\..\source\fpc\libclite\svlimith.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\time.inc"/>
         <Type Value="Include"/>
       </Item277>
       <Item278>
-        <Filename Value="..\..\source\fpc\libclite\svtimesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\timeh.inc"/>
         <Type Value="Include"/>
       </Item278>
       <Item279>
-        <Filename Value="..\..\source\fpc\libclite\swaith.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\timesh.inc"/>
         <Type Value="Include"/>
       </Item279>
       <Item280>
-        <Filename Value="..\..\source\fpc\libclite\sysexitsh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\timexh.inc"/>
         <Type Value="Include"/>
       </Item280>
       <Item281>
-        <Filename Value="..\..\source\fpc\libclite\syslogh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ttyenth.inc"/>
         <Type Value="Include"/>
       </Item281>
       <Item282>
-        <Filename Value="..\..\source\fpc\libclite\systypeshh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\types.inc"/>
         <Type Value="Include"/>
       </Item282>
       <Item283>
-        <Filename Value="..\..\source\fpc\libclite\termios.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\typesh.inc"/>
         <Type Value="Include"/>
       </Item283>
       <Item284>
-        <Filename Value="..\..\source\fpc\libclite\termiosh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ucontexth.inc"/>
         <Type Value="Include"/>
       </Item284>
       <Item285>
-        <Filename Value="..\..\source\fpc\libclite\time.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\ulimith.inc"/>
         <Type Value="Include"/>
       </Item285>
       <Item286>
-        <Filename Value="..\..\source\fpc\libclite\timeh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\unistdh.inc"/>
         <Type Value="Include"/>
       </Item286>
       <Item287>
-        <Filename Value="..\..\source\fpc\libclite\timesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\utimeh.inc"/>
         <Type Value="Include"/>
       </Item287>
       <Item288>
-        <Filename Value="..\..\source\fpc\libclite\timexh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\utmph.inc"/>
         <Type Value="Include"/>
       </Item288>
       <Item289>
-        <Filename Value="..\..\source\fpc\libclite\ttyenth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\utmpxh.inc"/>
         <Type Value="Include"/>
       </Item289>
       <Item290>
-        <Filename Value="..\..\source\fpc\libclite\types.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\wcharh.inc"/>
         <Type Value="Include"/>
       </Item290>
       <Item291>
-        <Filename Value="..\..\source\fpc\libclite\typesh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\wctypeh.inc"/>
         <Type Value="Include"/>
       </Item291>
       <Item292>
-        <Filename Value="..\..\source\fpc\libclite\ucontexth.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\wordexph.inc"/>
         <Type Value="Include"/>
       </Item292>
       <Item293>
-        <Filename Value="..\..\source\fpc\libclite\ulimith.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\wordsizeh.inc"/>
         <Type Value="Include"/>
       </Item293>
       <Item294>
-        <Filename Value="..\..\source\fpc\libclite\unistdh.inc"/>
+        <Filename Value="..\..\source\fpc\libclite\xlocaleh.inc"/>
         <Type Value="Include"/>
       </Item294>
       <Item295>
-        <Filename Value="..\..\source\fpc\libclite\utimeh.inc"/>
-        <Type Value="Include"/>
-      </Item295>
-      <Item296>
-        <Filename Value="..\..\source\fpc\libclite\utmph.inc"/>
-        <Type Value="Include"/>
-      </Item296>
-      <Item297>
-        <Filename Value="..\..\source\fpc\libclite\utmpxh.inc"/>
-        <Type Value="Include"/>
-      </Item297>
-      <Item298>
-        <Filename Value="..\..\source\fpc\libclite\wcharh.inc"/>
-        <Type Value="Include"/>
-      </Item298>
-      <Item299>
-        <Filename Value="..\..\source\fpc\libclite\wctypeh.inc"/>
-        <Type Value="Include"/>
-      </Item299>
-      <Item300>
-        <Filename Value="..\..\source\fpc\libclite\wordexph.inc"/>
-        <Type Value="Include"/>
-      </Item300>
-      <Item301>
-        <Filename Value="..\..\source\fpc\libclite\wordsizeh.inc"/>
-        <Type Value="Include"/>
-      </Item301>
-      <Item302>
-        <Filename Value="..\..\source\fpc\libclite\xlocaleh.inc"/>
-        <Type Value="Include"/>
-      </Item302>
-      <Item303>
         <Filename Value="..\..\source\fpc\libclite\xopen_limh.inc"/>
         <Type Value="Include"/>
-      </Item303>
+      </Item295>
     </Files>
     <RequiredPkgs Count="2">
       <Item1>
