@@ -53,9 +53,7 @@ uses
   Windows, Classes, MMSystem, Contnrs,
   {$ENDIF ~HAS_UNITSCOPE}
   JclBase,
-  {$IFDEF THREADSAFE}
   JclSynch,
-  {$ENDIF THREADSAFE}
   JclStrings;
 
 type

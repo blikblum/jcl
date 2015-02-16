@@ -492,6 +492,7 @@ type
 
 function IntToStrZeroPad(Value, Count: Integer): string;
 
+{$IFNDEF FPC}
 // Child processes
 type
   // e.g. TStrings.Append
@@ -501,7 +502,6 @@ type
 const
   ABORT_EXIT_CODE = {$IFDEF MSWINDOWS} ERROR_CANCELLED {$ELSE} 1223 {$ENDIF};
 
-{$IFNDEF FPC}
 function Execute(const CommandLine: string; OutputLineCallback: TTextHandler; RawOutput: Boolean = False;
   AbortPtr: PBoolean = nil; ProcessPriority: TJclProcessPriority = ppNormal): Cardinal; overload;
 function Execute(const CommandLine: string; AbortEvent: TJclEvent;
